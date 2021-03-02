@@ -1,0 +1,236 @@
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLoggingExtension\Definitions.RiderLoggingExtension.h
+E:/UE4_Projects/HackNSlashProto/Plugins/Developer/RiderLink/Source/RiderLoggingExtension/Private/RiderLoggingExtension.cpp
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RiderLoggingExtension\Public\RiderLoggingExtension.hpp
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\riderloggingextension\private\RiderOutputDevice.hpp
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RiderLink\Public\RiderLink.hpp
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\riderlink\public\RdConnection.hpp
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\base/IProtocol.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\base\IRdDynamic.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\impl/RName.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\thirdparty.hpp
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_set.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdint
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\deque
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xmemory
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xmemory0
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\limits
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ymath.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cfloat
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\climits
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cmath
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xtgmath.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cwchar
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xutility
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\utility
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\iosfwd
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdio
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstring
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic0.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\stdexcept
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xstring
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\functional
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\tuple
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\typeinfo
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_typeinfo.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\memory
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vector
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\ordered-map\include\tsl\ordered_hash.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\algorithm
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cassert
+C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\assert.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\iterator
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\istream
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ostream
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ios
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xlocnum
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\streambuf
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xiosbase
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xlocale
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xlocinfo
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xlocinfo.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\locale.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xfacet
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\system_error
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cerrno
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xcall_once.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xerrc.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\share.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_map.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\optional\tl\optional.hpp
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\variant\include\mpark/variant.hpp
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\config.hpp
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\in_place.hpp
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\lib.hpp
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\string-view-lite\include\nonstd/string_view.hpp
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cassert
+C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\assert.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\string
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xstring_insert.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\rd_framework_export.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/Serializers.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\protocol/RdId.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\protocol/Buffer.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\types/DateTime.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\std/hash.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ctime
+C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\time.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\rd_core_export.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\util/core_util.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\util\erase_if.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\util\gen_util.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\std/allocator.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\util\overloaded.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\util\shared_function.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\std/to_string.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thread
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\chrono
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ratio
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thr/xtimec.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thr/xthrcommon.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thr/xthread
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thr/xtime
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thr/xthreads.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\sstream
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\atomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\future
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\condition_variable
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\mutex
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ppltasks.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\pplwin.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\pplinterface.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ppltaskscheduler.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\crtdefs.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\pplcancellation_token.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\locale
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xlocbuf
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xlocmes
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xlocmon
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xloctime
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\codecvt
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\types/wrapper.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\util/core_traits.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\types/Void.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/spdlog.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/common.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/tweakme.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/null_mutex.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/fmt/fmt.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/fmt/bundled/core.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/fmt/bundled/format.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/registry.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/cfg/log_levels.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\unordered_map
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xhash
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\list
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/logger.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/log_msg.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/backtracer.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/log_msg_buffer.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/circular_q.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cassert
+C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\assert.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/version.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/synchronous_factory.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\iostream
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cassert
+C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\assert.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\std/list.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\util\hashing.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/ISerializable.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\protocol/Identities.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\base/IUnknownInstance.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/RdAny.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\serialization\DefaultAbstractDeclaration.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\std/unordered_map.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\unordered_set
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\scheduler/base/IScheduler.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\base/IWire.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\reactive/base/interfaces.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\lifetime/Lifetime.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\lifetime\LifetimeImpl.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\map
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xtree
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\base/IRdReactive.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\base\IRdBindable.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\base\IRdWireable.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\reactive/Property.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base/IProperty.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base\SignalX.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base\SignalCookie.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base\IPropertyBase.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\lifetime/SequentialLifetimes.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\lifetime\LifetimeDefinition.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\scheduler/SingleThreadScheduler.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\scheduler\base/SingleThreadSchedulerBase.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\RdEditorProtocol/RdEditorModel/RdEditorModel.Generated.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\protocol/Protocol.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/SerializationCtx.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\regex
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\intern/InternRoot.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\base/RdReactiveBase.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\base/RdBindableBase.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\util\guards.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\intern\InternScheduler.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/InternedAnySerializer.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/SerializationCtx.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\impl/RdSignal.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/Polymorphic.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\impl/RdProperty.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\base/RdPropertyBase.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\impl/RdList.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\reactive/ViewableList.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base/IViewableList.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base\viewable_collections.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\impl/RdSet.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\reactive/ViewableSet.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base/IViewableSet.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\impl/RdMap.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\reactive/ViewableMap.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base/IViewableMap.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\base/ISerializersOwner.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/NullableSerializer.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/AbstractPolymorphic.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\util\framework_traits.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/ArraySerializer.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization/InternedSerializer.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\ext/RdExtBase.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\ext\ExtWire.h
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\queue
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\task/RdCall.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\task\RdTask.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\task\RdTaskImpl.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\task\RdTaskResult.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\scheduler/SynchronousScheduler.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\task\WiredRdTask.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\task\WiredRdTaskImpl.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\task/RdEndpoint.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\task/RdSymmetricCall.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\util/enum.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../instantiations.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\riderlink\public\UE4TypesMarshallers.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../UE4Library/UnrealLogEvent.Generated.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\riderlink\public\model\library\ue4library\../UE4Library/LogMessageInfo.Generated.h
+e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\riderlink\public\model\library\ue4library\../UE4Library/StringRange.Generated.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../UE4Library/BlueprintReference.Generated.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../UE4Library/UClass.Generated.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../UE4Library/PlayState.Generated.h
+E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RiderBlueprintExtension\Public\BlueprintProvider.hpp
+E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Internationalization/Regex.h
+E:/UE4_Projects/HackNSlashProto/Plugins/Developer/RiderLink/Source/RiderLoggingExtension/Private/RiderOutputDevice.cpp
