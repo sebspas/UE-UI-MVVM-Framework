@@ -71,7 +71,7 @@ Saved/*
 # Compiled source files for the engine to use
 Intermediate/*
 Plugins/*/Intermediate/*
-Plugins/*
+Plugins/*/RiderLink/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
