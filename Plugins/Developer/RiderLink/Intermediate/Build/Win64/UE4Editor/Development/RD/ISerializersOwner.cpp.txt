@@ -1,5 +1,5 @@
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\base\ISerializersOwner.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\base\ISerializersOwner.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\unordered_set
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xhash
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstring
@@ -77,4 +77,4 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\stdexcept
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xstring
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vector
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\rd_framework_export.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\rd_framework_export.h

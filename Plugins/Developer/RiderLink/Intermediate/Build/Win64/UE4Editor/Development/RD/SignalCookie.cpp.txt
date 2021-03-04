@@ -1,5 +1,5 @@
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base\SignalCookie.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\reactive\base\SignalCookie.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdint
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\yvals.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\yvals_core.h
@@ -15,7 +15,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_new.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\use_ansi.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\stdint.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\rd_core_export.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\rd_core_export.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\atomic
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\type_traits
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xstddef

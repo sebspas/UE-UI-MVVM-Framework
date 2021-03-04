@@ -1,7 +1,7 @@
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\impl\RName.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\thirdparty.hpp
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_set.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\impl\RName.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\thirdparty.hpp
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_set.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstddef
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\stddef.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\corecrt.h
@@ -82,7 +82,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_typeinfo.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\memory
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vector
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\ordered-map\include\tsl\ordered_hash.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\ordered-map\include\tsl\ordered_hash.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\algorithm
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cassert
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\assert.h
@@ -104,15 +104,15 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xcall_once.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xerrc.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\share.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_map.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\optional\tl\optional.hpp
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\variant\include\mpark/variant.hpp
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\config.hpp
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\in_place.hpp
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\lib.hpp
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\string-view-lite\include\nonstd/string_view.hpp
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_map.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\optional\tl\optional.hpp
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\variant\include\mpark/variant.hpp
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\config.hpp
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\in_place.hpp
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\lib.hpp
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\string-view-lite\include\nonstd/string_view.hpp
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cassert
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\assert.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\string
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xstring_insert.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\rd_framework_export.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\rd_framework_export.h

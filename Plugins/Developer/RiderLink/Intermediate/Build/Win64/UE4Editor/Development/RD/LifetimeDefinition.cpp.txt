@@ -1,7 +1,7 @@
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\lifetime\LifetimeDefinition.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\lifetime\LifetimeImpl.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\std/hash.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\lifetime\LifetimeDefinition.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\lifetime\LifetimeImpl.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\src\main\std/hash.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\functional
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\exception
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\yvals.h
@@ -114,11 +114,11 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\thirdparty.hpp
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_set.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\thirdparty.hpp
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_set.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\deque
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vector
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\ordered-map\include\tsl\ordered_hash.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\ordered-map\include\tsl\ordered_hash.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\algorithm
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cassert
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\assert.h
@@ -136,26 +136,26 @@ C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\ctype.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\locale.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xfacet
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\share.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_map.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\optional\tl\optional.hpp
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\variant\include\mpark/variant.hpp
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\config.hpp
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\in_place.hpp
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\lib.hpp
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\string-view-lite\include\nonstd/string_view.hpp
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\ordered-map\include\tsl/ordered_map.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\optional\tl\optional.hpp
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\variant\include\mpark/variant.hpp
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\config.hpp
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\in_place.hpp
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\variant\include\mpark\lib.hpp
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\string-view-lite\include\nonstd/string_view.hpp
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cassert
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\assert.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\string
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xstring_insert.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\rd_core_export.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\lifetime\Lifetime.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/spdlog.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/common.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/tweakme.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/null_mutex.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/fmt/fmt.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/fmt/bundled/core.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/fmt/bundled/format.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\src\rd_core_cpp\rd_core_export.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\src\rd_core_cpp\src\main\lifetime\Lifetime.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/spdlog.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/common.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/tweakme.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/null_mutex.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/fmt/fmt.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/fmt/bundled/core.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/fmt/bundled/format.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\intrin.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\setjmp.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\immintrin.h
@@ -169,17 +169,17 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\mmintrin.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\zmmintrin.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ammintrin.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/registry.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/cfg/log_levels.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/registry.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/cfg/log_levels.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\unordered_map
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xhash
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\list
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/logger.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/log_msg.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/backtracer.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/log_msg_buffer.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/circular_q.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/logger.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/log_msg.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/backtracer.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/log_msg_buffer.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/circular_q.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cassert
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\assert.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/version.h
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/synchronous_factory.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/version.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\thirdparty\spdlog\include\spdlog/details/synchronous_factory.h

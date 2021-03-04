@@ -1,5 +1,5 @@
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\RD.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\RD.h
 E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Logging/LogMacros.h
 E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\CoreTypes.h
 e:\program\ue_4.24\engine\source\runtime\core\public\HAL/Platform.h

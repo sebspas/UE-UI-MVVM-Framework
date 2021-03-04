@@ -1,7 +1,7 @@
-E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\PassiveSocket.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\ActiveSocket.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\SimpleSocket.h
+E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\Definitions.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\PassiveSocket.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\ActiveSocket.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\SimpleSocket.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\sys/stat.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\corecrt.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime.h
@@ -144,7 +144,7 @@ C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\qos.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\Ws2tcpip.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\ws2ipdef.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\in6addr.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\Host.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\Host.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdint
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\yvals.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\yvals_core.h
@@ -155,6 +155,6 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_new.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\use_ansi.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\stdint.h
-e:\ue4_projects\hacknslashproto\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\StatTimer.h
+e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\clsocket\src\StatTimer.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\time.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt\corecrt_wtime.h

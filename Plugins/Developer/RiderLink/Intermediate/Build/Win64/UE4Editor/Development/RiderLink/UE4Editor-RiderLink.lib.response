@@ -6,8 +6,8 @@
 /NAME:"UE4Editor-RiderLink.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"E:\UE4_Projects\HackNSlashProto\Intermediate\Build\Win64\HackNSlashProtoEditor\Development\Core\SharedPCH.Core.RTTI.ShadowErrors.h.obj"
-"E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLink\Module.RiderLink.cpp.obj"
-"E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLink\Default.rc2.res"
-/OUT:"E:\UE4_Projects\HackNSlashProto\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLink\UE4Editor-RiderLink.lib"
+"E:\UE4_Projects\HackNSlash\Intermediate\Build\Win64\HackNSlashProtoEditor\Development\Core\SharedPCH.Core.RTTI.ShadowErrors.h.obj"
+"E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLink\Module.RiderLink.cpp.obj"
+"E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLink\Default.rc2.res"
+/OUT:"E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLink\UE4Editor-RiderLink.lib"
 /INCLUDE:IMPLEMENT_MODULE_RiderLink
