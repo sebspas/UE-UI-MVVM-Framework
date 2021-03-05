@@ -12,10 +12,10 @@
 /D_DISABLE_EXTENDED_ALIGNED_STORAGE
 /source-charset:utf-8
 /execution-charset:utf-8
+/Ob2
 /Ox
 /Ot
 /GF
-/Ob2
 /errorReport:prompt
 /EHsc
 /Z7
@@ -28,8 +28,9 @@
 /wd4458
 /wd4459
 /wd4463
+/wd4668
+/wd4244
 /wd4838
-/we4668
 /I .
 /I E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source
 /I E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\src

@@ -14,22 +14,12 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\limits
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ymath.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cfloat
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\climits
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cmath
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xtgmath.h
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cwchar
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xutility
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\utility
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\iosfwd
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdio
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstring
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic0.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\stdexcept
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xstring
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\functional
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\tuple
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\typeinfo
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_typeinfo.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\memory
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vector
 e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\ordered-map\include\tsl\ordered_hash.h
@@ -89,24 +79,6 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thr/xtime
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thr/xthreads.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\sstream
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\atomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic.h
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\future
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\condition_variable
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\mutex
@@ -229,35 +201,34 @@ e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\riderlink\public\m
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../UE4Library/BlueprintReference.Generated.h
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../UE4Library/UClass.Generated.h
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../UE4Library/PlayState.Generated.h
-E:\Program\UE_4.24\Engine\Source\Runtime\HeadMountedDisplay\Public\IHeadMountedDisplay.h
-e:\program\ue_4.24\engine\source\runtime\headmounteddisplay\public\HeadMountedDisplayTypes.h
-E:\Program\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\HeadMountedDisplayTypes.generated.h
-e:\program\ue_4.24\engine\source\runtime\headmounteddisplay\public\LateUpdateManager.h
-E:\Program\UE_4.24\Engine\Source\Runtime\HeadMountedDisplay\Public\IXRTrackingSystem.h
-e:\program\ue_4.24\engine\source\runtime\headmounteddisplay\public\IIdentifiableXRDevice.h
-E:\Program\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\IIdentifiableXRDevice.generated.h
-e:\program\ue_4.24\engine\source\runtime\headmounteddisplay\public\IXRInput.h
-E:\Program\UE_4.24\Engine\Source\Editor\LevelEditor\Public\LevelEditor.h
-e:\program\ue_4.24\engine\source\editor\leveleditor\public\ILevelEditor.h
-e:\program\ue_4.24\engine\source\editor\leveleditor\public\ViewportTypeDefinition.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Async/Async.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\HAL/Runnable.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\HAL/RunnableThread.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\HAL/PlatformAffinity.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/WindowsPlatformAffinity.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Misc/FeedbackContext.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Misc/SlowTaskStack.h
-E:\Program\UE_4.24\Engine\Source\Editor\UnrealEd\Classes\Editor/UnrealEdEngine.h
-E:\Program\UE_4.24\Engine\Source\Editor\UnrealEd\Public\IPackageAutoSaver.h
-E:\Program\UE_4.24\Engine\Source\Developer\SourceControl\Public\ISourceControlProvider.h
-e:\program\ue_4.24\engine\source\developer\sourcecontrol\public\ISourceControlOperation.h
-e:\program\ue_4.24\engine\source\developer\sourcecontrol\public\ISourceControlState.h
-E:\Program\UE_4.24\Engine\Source\Editor\UnrealEd\Public\IDDCNotifications.h
-E:\Program\UE_4.24\Engine\Source\Editor\UnrealEd\Public\ComponentVisualizer.h
-E:\Program\UE_4.24\Engine\Source\Editor\UnrealEd\Public\ComponentVisualizerManager.h
-E:\Program\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEd\UnrealEdEngine.generated.h
-E:\Program\UE_4.24\Engine\Source\Developer\HotReload/Public/IHotReload.h
-E:\Program\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\Misc/HotReloadInterface.h
-E:\Program\UE_4.24\Engine\Source\Editor\UnrealEd\Public\IAssetViewport.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Slate\Public\Widgets/SViewport.h
-E:\Program\UE_4.24\Engine\Source\Runtime\SlateCore\Public\Input/HittestGrid.h
+E:\Program\UE_4.26\Engine\Source\Runtime\HeadMountedDisplay\Public\IHeadMountedDisplay.h
+e:\program\ue_4.26\engine\source\runtime\headmounteddisplay\public\HeadMountedDisplayTypes.h
+e:\program\ue_4.26\engine\source\runtime\headmounteddisplay\public\IMotionController.h
+E:\Program\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\HeadMountedDisplayTypes.generated.h
+e:\program\ue_4.26\engine\source\runtime\headmounteddisplay\public\LateUpdateManager.h
+E:\Program\UE_4.26\Engine\Source\Runtime\HeadMountedDisplay\Public\IXRTrackingSystem.h
+e:\program\ue_4.26\engine\source\runtime\headmounteddisplay\public\IIdentifiableXRDevice.h
+E:\Program\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\IIdentifiableXRDevice.generated.h
+e:\program\ue_4.26\engine\source\runtime\headmounteddisplay\public\IXRInput.h
+e:\program\ue_4.26\engine\source\runtime\headmounteddisplay\public\XRGestureConfig.h
+E:\Program\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\XRGestureConfig.generated.h
+E:\Program\UE_4.26\Engine\Source\Editor\LevelEditor\Public\LevelEditor.h
+e:\program\ue_4.26\engine\source\editor\leveleditor\public\ILevelEditor.h
+e:\program\ue_4.26\engine\source\editor\leveleditor\public\ViewportTypeDefinition.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Async/Async.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Misc/FeedbackContext.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Misc/SlowTaskStack.h
+E:\Program\UE_4.26\Engine\Source\Editor\UnrealEd\Classes\Editor/UnrealEdEngine.h
+E:\Program\UE_4.26\Engine\Source\Editor\UnrealEd\Public\IPackageAutoSaver.h
+E:\Program\UE_4.26\Engine\Source\Developer\SourceControl\Public\ISourceControlProvider.h
+e:\program\ue_4.26\engine\source\developer\sourcecontrol\public\ISourceControlOperation.h
+e:\program\ue_4.26\engine\source\developer\sourcecontrol\public\ISourceControlState.h
+E:\Program\UE_4.26\Engine\Source\Editor\UnrealEd\Public\IDDCNotifications.h
+E:\Program\UE_4.26\Engine\Source\Editor\UnrealEd\Public\ComponentVisualizer.h
+E:\Program\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEd\ComponentVisualizer.generated.h
+E:\Program\UE_4.26\Engine\Source\Editor\UnrealEd\Public\ComponentVisualizerManager.h
+E:\Program\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEd\UnrealEdEngine.generated.h
+E:\Program\UE_4.26\Engine\Source\Developer\HotReload/Public/IHotReload.h
+E:\Program\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\Misc/HotReloadInterface.h
+E:\Program\UE_4.26\Engine\Source\Editor\UnrealEd\Public\IAssetViewport.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Slate\Public\Widgets/SViewport.h

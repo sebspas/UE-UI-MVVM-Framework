@@ -75,3 +75,5 @@ Plugins/*/RiderLink/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+Plugins/Developer/RiderLink/

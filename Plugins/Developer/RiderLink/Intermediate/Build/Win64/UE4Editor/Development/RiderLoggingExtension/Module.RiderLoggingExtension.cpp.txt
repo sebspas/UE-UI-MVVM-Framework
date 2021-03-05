@@ -232,5 +232,5 @@ E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderLink\Public\M
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../UE4Library/UClass.Generated.h
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\Library\UE4Library\../UE4Library/PlayState.Generated.h
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderBlueprintExtension\Public\BlueprintProvider.hpp
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Internationalization/Regex.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Internationalization/Regex.h
 E:/UE4_Projects/HackNSlash/Plugins/Developer/RiderLink/Source/RiderLoggingExtension/Private/RiderOutputDevice.cpp

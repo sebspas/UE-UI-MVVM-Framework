@@ -1,4 +1,5 @@
-/MANIFEST:NO
+/MANIFEST:EMBED
+/MANIFESTINPUT:E:\Program\UE_4.26\Engine\Build\Windows\Resources\Default-Win64.manifest
 /NOLOGO
 /DEBUG
 /errorReport:prompt
@@ -35,6 +36,8 @@
 "E:\UE4_Projects\HackNSlash\Intermediate\Build\Win64\HackNSlashProtoEditor\Development\Core\SharedPCH.Core.RTTI.ShadowErrors.h.obj"
 "E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLink\Module.RiderLink.cpp.obj"
 "E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLink\Default.rc2.res"
+"E:\Program\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
+"E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\UE4Editor-RD.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"
@@ -59,8 +62,6 @@
 "setupapi.lib"
 "dwmapi.lib"
 "imm32.lib"
-"E:\Program\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
-"E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RD\UE4Editor-RD.lib"
 /OUT:"E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Binaries\Win64\UE4Editor-RiderLink.dll"
 /IMPLIB:"E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderLink\UE4Editor-RiderLink.suppressed.lib"
 /PDB:"E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Binaries\Win64\UE4Editor-RiderLink.pdb"

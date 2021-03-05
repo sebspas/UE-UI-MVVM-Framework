@@ -191,11 +191,11 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\wire\ByteBufferAsyncProcessor.h
 e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\wire\PkgInputStream.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\array
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\HAL/PlatformFilemanager.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/AllowWindowsPlatformTypes.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/WindowsHWrapper.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/PreWindowsApi.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/MinWindows.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\HAL/PlatformFilemanager.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/AllowWindowsPlatformTypes.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/WindowsHWrapper.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/PreWindowsApi.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/MinWindows.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\Windows.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\sdkddkver.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\excpt.h
@@ -291,11 +291,11 @@ C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\wnnc.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\stralign.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\imm.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\ime_cmodes.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/PostWindowsApi.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/PreWindowsApi.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/PostWindowsApi.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/HideWindowsPlatformTypes.h
-E:\Program\UE_4.24\Engine\Source\Runtime/Launch/Resources/Version.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/PostWindowsApi.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/PreWindowsApi.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/PostWindowsApi.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/HideWindowsPlatformTypes.h
+E:\Program\UE_4.26\Engine\Source\Runtime/Launch/Resources/Version.h
 E:/UE4_Projects/HackNSlash/Plugins/Developer/RiderLink/Source/RiderLink/Private/RdConnection.cpp
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderLink\Public\RdConnection.hpp
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\scheduler/SingleThreadScheduler.h

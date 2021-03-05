@@ -1,22 +1,28 @@
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UE4Editor\Development\RiderBlueprintExtension\Definitions.RiderBlueprintExtension.h
 E:/UE4_Projects/HackNSlash/Plugins/Developer/RiderLink/Source/RiderBlueprintExtension/Private/BlueprintProvider.cpp
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderBlueprintExtension\Public\BlueprintProvider.hpp
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Async/Async.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\HAL/Runnable.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\HAL/RunnableThread.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\HAL/PlatformAffinity.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Core\Public\Windows/WindowsPlatformAffinity.h
-E:\Program\UE_4.24\Engine\Source\Editor\Kismet\Public\BlueprintEditor.h
-e:\program\ue_4.24\engine\source\editor\kismet\public\WorkflowOrientedApp/WorkflowTabFactory.h
-e:\program\ue_4.24\engine\source\editor\kismet\public\WorkflowOrientedApp/WorkflowTabManager.h
-e:\program\ue_4.24\engine\source\editor\kismet\public\BlueprintEditorModule.h
-e:\program\ue_4.24\engine\source\editor\kismet\public\WorkflowOrientedApp/WorkflowCentricApplication.h
-E:\Program\UE_4.24\Engine\Source\Developer/Merge/Public/Merge.h
-E:\Program\UE_4.24\Engine\Source\Runtime\MessagingCommon\Public\MessageEndpointBuilder.h
-E:\Program\UE_4.24\Engine\Source\Runtime\Messaging\Public\IMessagingModule.h
-e:\program\ue_4.24\engine\source\runtime\messagingcommon\public\MessageHandlers.h
-E:\Program\UE_4.24\Engine\Source\Editor\UnrealEd\Public\Kismet2/KismetEditorUtilities.h
-E:\Program\UE_4.24\Engine\Source\Editor\UnrealEd\Public\Toolkits/AssetEditorManager.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Async/Async.h
+E:\Program\UE_4.26\Engine\Source\Editor\UnrealEdMessages\Classes\AssetEditorMessages.h
+E:\Program\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEdMessages\AssetEditorMessages.generated.h
+E:\Program\UE_4.26\Engine\Source\Editor\Kismet\Public\BlueprintEditor.h
+e:\program\ue_4.26\engine\source\editor\kismet\public\WorkflowOrientedApp/WorkflowTabFactory.h
+e:\program\ue_4.26\engine\source\editor\kismet\public\WorkflowOrientedApp/WorkflowTabManager.h
+e:\program\ue_4.26\engine\source\editor\kismet\public\BlueprintEditorModule.h
+e:\program\ue_4.26\engine\source\editor\kismet\public\WorkflowOrientedApp/WorkflowCentricApplication.h
+E:\Program\UE_4.26\Engine\Source\Developer/Merge/Public/Merge.h
+E:\Program\UE_4.26\Engine\Source\Runtime\MessagingCommon\Public\MessageEndpointBuilder.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Messaging\Public\IMessageBus.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Messaging\Public\IMessageHandler.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Messaging\Public\IMessagingModule.h
+e:\program\ue_4.26\engine\source\runtime\messagingcommon\public\MessageEndpoint.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Core\Public\Containers/ArrayBuilder.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Messaging\Public\IMessageAttachment.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Messaging\Public\IMessageReceiver.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Messaging\Public\IMessageSender.h
+E:\Program\UE_4.26\Engine\Source\Runtime\Messaging\Public\IMessageBusListener.h
+e:\program\ue_4.26\engine\source\runtime\messagingcommon\public\MessageHandlers.h
+E:\Program\UE_4.26\Engine\Source\Editor\UnrealEd\Public\Kismet2/KismetEditorUtilities.h
+E:\Program\UE_4.26\Engine\Source\Editor\UnrealEd\Public\Toolkits/AssetEditorManager.h
 E:/UE4_Projects/HackNSlash/Plugins/Developer/RiderLink/Source/RiderBlueprintExtension/Private/RiderBlueprintExtension.cpp
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderBlueprintExtension\Public\RiderBlueprintExtension.hpp
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderLink\Public\Model\RdEditorProtocol/RdEditorModel/RdEditorModel.Generated.h
@@ -33,22 +39,12 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\limits
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\ymath.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cfloat
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\climits
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cmath
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xtgmath.h
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cwchar
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xutility
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\utility
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\iosfwd
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdio
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\cstring
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic0.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\stdexcept
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xstring
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\functional
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\tuple
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\typeinfo
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_typeinfo.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\memory
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\vector
 e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\thirdparty\ordered-map\include\tsl\ordered_hash.h
@@ -108,24 +104,6 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thr/xtime
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\thr/xthreads.h
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\sstream
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\atomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic.h
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\future
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\condition_variable
 C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Tools\MSVC\14.16.27023\INCLUDE\mutex
@@ -248,7 +226,8 @@ E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RiderLink\Public\R
 e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\riderlink\public\RdConnection.hpp
 E:\UE4_Projects\HackNSlash\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\scheduler/SingleThreadScheduler.h
 e:\ue4_projects\hacknslash\plugins\developer\riderlink\source\rd\src\rd_framework_cpp\src\main\scheduler\base/SingleThreadSchedulerBase.h
-E:\Program\UE_4.24\Engine\Source\Runtime\AssetRegistry\Public\AssetRegistryModule.h
-E:\Program\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\Misc/AssetRegistryInterface.h
-e:\program\ue_4.24\engine\source\runtime\assetregistry\public\IAssetRegistry.h
-E:\Program\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AssetRegistry\IAssetRegistry.generated.h
+E:\Program\UE_4.26\Engine\Source\Runtime\AssetRegistry\Public\AssetRegistryModule.h
+e:\program\ue_4.26\engine\source\runtime\assetregistry\public\AssetRegistry/AssetRegistryModule.h
+e:\program\ue_4.26\engine\source\runtime\assetregistry\public\AssetRegistry/IAssetRegistry.h
+E:\Program\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\Misc/AssetRegistryInterface.h
+E:\Program\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AssetRegistry\IAssetRegistry.generated.h
