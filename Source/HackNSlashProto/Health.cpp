@@ -17,6 +17,11 @@ void UHealth::ApplyHealthChange(float Value)
 {
 	Current += Value;
 	HealthChanged.Broadcast(Current, MaxHealth);
+
+	if(Current <= 0.f)
+	{
+		
+	}
 }
 
 // Called when the game starts

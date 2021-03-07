@@ -49,13 +49,8 @@ void AHackNSlashProtoPlayerController::SetupInputComponent()
 	InputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AHackNSlashProtoPlayerController::MoveToTouchLocation);
 	InputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AHackNSlashProtoPlayerController::MoveToTouchLocation);
 
-	InputComponent->BindAction("ResetVR", IE_Pressed, this, &AHackNSlashProtoPlayerController::OnResetVR);
+	// 
 	InputComponent->BindAction("TestHealth", IE_Pressed, this, &AHackNSlashProtoPlayerController::OnTestHealth);
-}
-
-void AHackNSlashProtoPlayerController::OnResetVR()
-{
-	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
 }
 
 void AHackNSlashProtoPlayerController::MoveToMouseCursor()
