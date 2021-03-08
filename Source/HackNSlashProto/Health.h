@@ -7,6 +7,7 @@
 #include "Health.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHealthChangedSignature, float, Current, float, Max);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeathSignature);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HACKNSLASHPROTO_API UHealth : public UActorComponent
@@ -22,6 +23,9 @@ public:
 
 	UPROPERTY(BlueprintAssignable, BlueprintCallable)
 	FHealthChangedSignature HealthChanged;
+
+	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	FDeathSignature Death;
 	
 protected:
 	// Called when the game starts

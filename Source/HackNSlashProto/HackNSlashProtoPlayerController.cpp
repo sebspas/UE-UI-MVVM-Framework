@@ -7,23 +7,12 @@
 #include "HackNSlashProtoCharacter.h"
 #include "Health.h"
 #include "Engine/World.h"
+#include "Kismet/KismetMathLibrary.h"
 
 AHackNSlashProtoPlayerController::AHackNSlashProtoPlayerController()
 {
 	bShowMouseCursor = true;
 	DefaultMouseCursor = EMouseCursor::Crosshairs;
-}
-
-void AHackNSlashProtoPlayerController::OnTestHealth()
-{
-	APawn* const MyPawn = GetPawn();
-	if(MyPawn)
-	{
-		if(UHealth* Health = MyPawn->FindComponentByClass<UHealth>())
-		{
-			Health->ApplyHealthChange(-10.f);
-		}
-	}
 }
 
 void AHackNSlashProtoPlayerController::PlayerTick(float DeltaTime)
@@ -44,13 +33,6 @@ void AHackNSlashProtoPlayerController::SetupInputComponent()
 
 	InputComponent->BindAction("SetDestination", IE_Pressed, this, &AHackNSlashProtoPlayerController::OnSetDestinationPressed);
 	InputComponent->BindAction("SetDestination", IE_Released, this, &AHackNSlashProtoPlayerController::OnSetDestinationReleased);
-
-	// support touch devices 
-	InputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AHackNSlashProtoPlayerController::MoveToTouchLocation);
-	InputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AHackNSlashProtoPlayerController::MoveToTouchLocation);
-
-	// 
-	InputComponent->BindAction("TestHealth", IE_Pressed, this, &AHackNSlashProtoPlayerController::OnTestHealth);
 }
 
 void AHackNSlashProtoPlayerController::MoveToMouseCursor()
@@ -79,20 +61,6 @@ void AHackNSlashProtoPlayerController::MoveToMouseCursor()
 	}
 }
 
-void AHackNSlashProtoPlayerController::MoveToTouchLocation(const ETouchIndex::Type FingerIndex, const FVector Location)
-{
-	FVector2D ScreenSpaceLocation(Location);
-
-	// Trace to see what is under the touch location
-	FHitResult HitResult;
-	GetHitResultAtScreenPosition(ScreenSpaceLocation, CurrentClickTraceChannel, true, HitResult);
-	if (HitResult.bBlockingHit)
-	{
-		// We hit something, move there
-		SetNewMoveDestination(HitResult.ImpactPoint);
-	}
-}
-
 void AHackNSlashProtoPlayerController::SetNewMoveDestination(const FVector DestLocation)
 {
 	APawn* const MyPawn = GetPawn();
@@ -104,6 +72,13 @@ void AHackNSlashProtoPlayerController::SetNewMoveDestination(const FVector DestL
 		if ((Distance > 120.0f))
 		{
 			UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, DestLocation);
+		}
+		else
+		{
+			// Rotate the player toward the clicked location
+			const FRotator rotation = UKismetMathLibrary::FindLookAtRotation(MyPawn->GetActorLocation(), DestLocation);
+			const FRotator newRotationNoY = FRotator(0.f, rotation.Yaw, 0.f);
+			MyPawn->SetActorRotation(newRotationNoY);
 		}
 	}
 }
