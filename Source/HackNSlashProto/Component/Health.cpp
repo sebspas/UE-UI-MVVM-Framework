@@ -13,13 +13,16 @@ UHealth::UHealth()
 
 void UHealth::ApplyHealthChange(float Value)
 {
+	const float PreviousHealth = Current;
     Current += Value;
 
     if(Current <= 0.f)
     {
+    	Current = 0.f;
 		Death.Broadcast();
     } 
-    else 
+
+	if(PreviousHealth != Current)
     {
     	HealthChanged.Broadcast(Current, MaxHealth);
     }

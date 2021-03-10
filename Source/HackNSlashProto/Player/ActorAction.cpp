@@ -3,23 +3,33 @@
 #include "HackNSlashProtoCharacter.h"
 #include "HackNSlashProtoPlayerController.h"
 
-bool UActorAction::CanExecute(UObject* OwnerActor)
+void UActorAction::Init(UObject* OwnerActor)
 {
-	if(!OwnerActor)
-	{
-		return false;
-	}
-
 	Owner = OwnerActor;
+}
+
+bool UActorAction::CanExecute()
+{
+	bool CanExecute = false;
 	if(AHackNSlashProtoCharacter* player = Cast<AHackNSlashProtoCharacter>(Owner))
 	{
-		if(!CanMove)
+		CanExecute = CanMove || player->GetVelocity().Size() <= 0.f;
+	}
+
+	CanExecute &= !IsInCooldown();
+	
+	return CanExecute;
+}
+
+void UActorAction::Execute()
+{
+	if(AHackNSlashProtoCharacter* player = Cast<AHackNSlashProtoCharacter>(Owner))
+	{
+		if(AHackNSlashProtoPlayerController* PlayerController = Cast<AHackNSlashProtoPlayerController>(player->GetController()))
 		{
-			return player->GetVelocity().Size() <= 0.f;
+			PlayerController->RotateTowardCursor();
 		}
 	}
-	
-	return false;
 }
 
 void UActorAction::Cancel()
@@ -31,51 +41,54 @@ void UActorAction::Cancel()
 	}
 }
 
-void UBasicAbility::Execute(UObject* OwnerActor)
+void UActorAction::Tick(float DeltaSeconds)
 {
-	if(!OwnerActor)
+	if(RemainingCooldown != 0.f)
 	{
-		return;
+		RemainingCooldown -= DeltaSeconds;
+		if(RemainingCooldown < 0.f)
+		{
+			RemainingCooldown = 0.f;
+		}
 	}
+}
 
-	Owner = OwnerActor;
+void UBasicAbility::Execute()
+{
+	UActorAction::Execute();
+	
 	if(AHackNSlashProtoCharacter* player = Cast<AHackNSlashProtoCharacter>(Owner))
 	{
 		player->GetMesh()->Stop();
 		player->GetMesh()->SetAnimationMode(EAnimationMode::AnimationSingleNode);
 		player->GetMesh()->PlayAnimation(Animation, false);
 	}
+
+	RemainingCooldown = Cooldown;
 }
 
-void UBasicSpell::Execute(UObject* OwnerActor)
+void UBasicSpell::Execute()
 {
-	if(!OwnerActor)
-	{
-		return;
-	}
-
-	Owner = OwnerActor;
+	UActorAction::Execute();
+	
 	if(AHackNSlashProtoCharacter* player = Cast<AHackNSlashProtoCharacter>(Owner))
-	{
-		if(AHackNSlashProtoPlayerController* PlayerController = Cast<AHackNSlashProtoPlayerController>(player->GetController()))
-		{
-			PlayerController->RotateTowardCursor();
-		}
-		
+	{		
 		player->GetMesh()->Stop();
 		player->GetMesh()->SetAnimationMode(EAnimationMode::AnimationSingleNode);
 		player->GetMesh()->PlayAnimation(Animation, false);
 
 		FVector Location = player->GetActorLocation();
-		FRotator Rotator = player->GetActorRotation();
-		AActor* spawnedActor = GetWorld()->SpawnActor(SpawnableType.GetDefaultObject()->GetClass(), &Location, &Rotator);
-		if(spawnedActor)
+		FRotator Rotation = player->GetActorRotation();
+		AActor* SpawnedActor = player->GetWorld()->SpawnActor(SpawnableType, &Location, &Rotation);
+		if(SpawnedActor)
 		{
-			UStaticMeshComponent* staticMeshComponent = Cast<UStaticMeshComponent>(spawnedActor->GetComponentByClass(UStaticMeshComponent::StaticClass()));
-			if(staticMeshComponent)
+			UStaticMeshComponent* StaticMeshComponent = Cast<UStaticMeshComponent>(SpawnedActor->GetComponentByClass(UStaticMeshComponent::StaticClass()));
+			if(StaticMeshComponent)
 			{
-				staticMeshComponent->SetPhysicsLinearVelocity(player->GetActorForwardVector()* Speed);
+				StaticMeshComponent->SetPhysicsLinearVelocity(player->GetActorForwardVector()* Speed);
 			}
 		}
+
+		RemainingCooldown = Cooldown;
 	}
 }

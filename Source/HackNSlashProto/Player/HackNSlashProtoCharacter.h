@@ -51,7 +51,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	class UDecalComponent* CursorToWorld;
 	
-	UPROPERTY(Instanced, EditAnywhere, BlueprintReadOnly, Category = Gameplay)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gameplay)
 	TArray<UActorAction*> Actions;
 
 private:

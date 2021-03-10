@@ -82,30 +82,42 @@ void AHackNSlashProtoCharacter::Tick(float DeltaSeconds)
 			CursorToWorld->SetWorldRotation(CursorR);
 		}
 	}
+
+	// Update players action (mostly for cooldown for now)
+    for (auto Action : Actions)
+    {
+	    Action->Tick(DeltaSeconds);
+    }
 }
 
 void AHackNSlashProtoCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	CursorToWorld->SetDecalMaterial(ClickDecal);	
+	CursorToWorld->SetDecalMaterial(ClickDecal);
+
+	// Init all the Action link to this player with the owner
+	for (auto Action : Actions)
+	{
+		Action->Init(this);
+	}
 }
 
 void AHackNSlashProtoCharacter::ExecuteAction(uint32 index)
 {
 	if(Actions.IsValidIndex(index))
 	{
-		// Cancel Current
-		if(Actions.IsValidIndex(CurrentActionIndex))
-		{
-			Actions[CurrentActionIndex]->Cancel();
-		}
-		
 		UActorAction* ActorAction = Actions[index];
-		if(ActorAction->CanExecute(this))
+		if(ActorAction->CanExecute())
 		{
+			// Cancel Current
+			if(Actions.IsValidIndex(CurrentActionIndex))
+			{
+				Actions[CurrentActionIndex]->Cancel();
+			}
+			
 			CurrentActionIndex = index;
-			ActorAction->Execute(this);
+			ActorAction->Execute();
 		}
 	}
 }
