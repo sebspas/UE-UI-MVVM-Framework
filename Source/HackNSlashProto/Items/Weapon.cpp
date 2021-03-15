@@ -3,3 +3,7 @@
 
 #include "Weapon.h"
 
+void AWeapon::ClearActorsHit()
+{
+	ActorsHit.Reset();
+}

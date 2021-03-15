@@ -6,6 +6,8 @@
 
 #include "ActorAction.h"
 #include "GameFramework/Character.h"
+#include "HackNSlashProto/Items/Inventory.h"
+
 #include "HackNSlashProtoCharacter.generated.h"
 
 class UMaterial;
@@ -50,6 +52,9 @@ protected:
 	/** A decal that projects to the cursor location. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	class UDecalComponent* CursorToWorld;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gameplay)
+	class UInventory* Inventory;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gameplay)
 	TArray<UActorAction*> Actions;

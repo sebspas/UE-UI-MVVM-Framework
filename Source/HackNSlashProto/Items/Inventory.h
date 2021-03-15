@@ -18,13 +18,18 @@ enum class ESlotType : uint8
 	Accessories
 };
 
-USTRUCT(BlueprintType)
-struct FInventorySlot
+UCLASS(BlueprintType, DefaultToInstanced, EditInlineNew)
+class UInventorySlot : public UObject
 {
 	GENERATED_BODY()
 
+public:
 	void SpawnEquipment(TSubclassOf<AEquipment> EquipmentToSpawn, UMeshComponent* Mesh);
-	
+
+	AEquipment* GetEquipmentInSlot() const { return Equipment; }
+	ESlotType GetSlotType() const { return Type; }
+
+protected:
 	UPROPERTY(EditAnywhere)
 	ESlotType Type = ESlotType::Weapon;
 
@@ -44,6 +49,8 @@ public:
 	// Sets default values for this component's properties
 	UInventory();
 
+	AWeapon* GetEquippedWeapon() const;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -52,8 +59,8 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FInventorySlot> Slots;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Instanced)
+	TArray<UInventorySlot*> Slots;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AWeapon> DefaultWeapon;

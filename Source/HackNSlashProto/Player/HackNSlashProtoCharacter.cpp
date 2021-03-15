@@ -1,16 +1,16 @@
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
 #include "HackNSlashProtoCharacter.h"
-#include "UObject/ConstructorHelpers.h"
+#include "HeadMountedDisplayFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
-#include "Components/DecalComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/DecalComponent.h"
+#include "Engine/World.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "HeadMountedDisplayFunctionLibrary.h"
+#include "../Items/Inventory.h"
 #include "Materials/Material.h"
-#include "Engine/World.h"
 
 AHackNSlashProtoCharacter::AHackNSlashProtoCharacter()
 {
@@ -46,6 +46,9 @@ AHackNSlashProtoCharacter::AHackNSlashProtoCharacter()
 	CursorToWorld->SetupAttachment(RootComponent);
 	CursorToWorld->DecalSize = FVector(16.0f, 32.0f, 32.0f);
 	CursorToWorld->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f).Quaternion());
+
+	// Create Inventory Component
+	Inventory = CreateDefaultSubobject<UInventory>(TEXT("Inventory"));
 
 	// Activate ticking in order to update the cursor every frame.
 	PrimaryActorTick.bCanEverTick = true;

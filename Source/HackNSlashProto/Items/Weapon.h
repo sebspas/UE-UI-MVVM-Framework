@@ -12,7 +12,14 @@ class HACKNSLASHPROTO_API AWeapon : public AEquipment
 {
 	GENERATED_BODY()
 
-protected:
+public:
+	TSet<AActor*> GetActorsHit() const { return ActorsHit; }
+
+	void ClearActorsHit();
+	
 	UPROPERTY(EditAnywhere)
 	TArray<FModifier> Modifiers;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TSet<AActor*> ActorsHit;
 };

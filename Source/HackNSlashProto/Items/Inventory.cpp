@@ -5,7 +5,7 @@
 
 #include "Weapon.h"
 
-void FInventorySlot::SpawnEquipment(TSubclassOf<AEquipment> EquipmentToSpawn, UMeshComponent* Mesh)
+void UInventorySlot::SpawnEquipment(TSubclassOf<AEquipment> EquipmentToSpawn, UMeshComponent* Mesh)
 {
 	if(Mesh)
 	{
@@ -32,6 +32,19 @@ UInventory::UInventory()
 	// ...
 }
 
+AWeapon* UInventory::GetEquippedWeapon() const
+{
+	for (auto slot : Slots)
+	{
+		if(slot->GetSlotType() == ESlotType::Weapon)
+		{
+			return Cast<AWeapon>(slot->GetEquipmentInSlot());
+		}
+	}
+
+	return nullptr;
+}
+
 
 // Called when the game starts
 void UInventory::BeginPlay()
@@ -44,7 +57,7 @@ void UInventory::BeginPlay()
 	UMeshComponent* Mesh = Cast<UMeshComponent>(GetOwner()->GetComponentByClass(UMeshComponent::StaticClass()));
 	if(Mesh)
 	{
-		Slots[0].SpawnEquipment(DefaultWeapon, Mesh);
+		Slots[0]->SpawnEquipment(DefaultWeapon, Mesh);
 	}
 }
 

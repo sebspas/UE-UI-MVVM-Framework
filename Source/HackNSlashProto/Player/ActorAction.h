@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "ActorAction.generated.h"
 
+class AWeapon;
 UCLASS(BlueprintType, DefaultToInstanced, EditInlineNew, Abstract)
 class UActorAction : public UDataAsset
 {
@@ -17,8 +18,9 @@ public:
 	virtual void Cancel();
 
 	bool IsInCooldown() { return RemainingCooldown != 0.f; }
+	bool IsCompleted() { return IsActionCompleted; }
 
-	void Tick(float DeltaSeconds);
+	virtual void Tick(float DeltaSeconds);
 
 	UPROPERTY(EditAnywhere)
 	bool CanMove = false;
@@ -40,6 +42,7 @@ public:
 
 protected:
 	UObject* Owner = nullptr;
+	bool IsActionCompleted = false;
 };
 
 UCLASS(BlueprintType)
@@ -51,6 +54,10 @@ public:
 	UBasicAbility() {}
 
 	virtual void Execute() override;
+	
+	virtual void Tick(float DeltaSeconds) override;
+
+	void ApplyAttack(AActor* Actor) const;
 
 protected:
 	UPROPERTY(EditAnywhere)
@@ -58,6 +65,15 @@ protected:
 
 	UPROPERTY(EditAnywhere)
 	UAnimSequence* Animation;
+
+private:
+	float AnimationLength = 0.f;
+
+	// Reference on the weapon used for this attack
+	AWeapon* Weapon;
+	
+	// We want to apply the hit as soon as we hit a new actor
+	TSet<AActor*> ActorDamaged;
 };
 
 UCLASS(BlueprintType)
