@@ -15,7 +15,7 @@ void UHealth::ApplyHealthChange(float Value)
 {
 	const float PreviousHealth = Current;
     Current += Value;
-
+	
     if(Current <= 0.f)
     {
     	Current = 0.f;
@@ -24,7 +24,7 @@ void UHealth::ApplyHealthChange(float Value)
 
 	if(PreviousHealth != Current)
     {
-    	HealthChanged.Broadcast(Current, MaxHealth);
+    	HealthChanged.Broadcast(Value, Current, MaxHealth);
     }
 }
 
