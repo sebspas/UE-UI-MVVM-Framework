@@ -3,8 +3,11 @@
 
 #include "ViewModelObject.generated.h"
 
-USTRUCT(BlueprintType)
-struct FViewModelObject
+UCLASS()
+class UViewModelObject : public UStruct
 {
 	GENERATED_BODY()
+
+public:
+	UViewModelObject() = default;
 };

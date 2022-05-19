@@ -3,13 +3,16 @@
 
 #include "HealthViewModelObject.generated.h"
 
-USTRUCT(BlueprintType)
-struct FHealthViewModelObject : public FViewModelObject
+UCLASS(BlueprintType)
+class UHealthViewModelObject : public UViewModelObject
 {
 	GENERATED_BODY()
-	
+
+public:
+	UHealthViewModelObject() {}
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	float Current = 100.f;
+	float Current = 0.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float MaxHealth = 100.f;

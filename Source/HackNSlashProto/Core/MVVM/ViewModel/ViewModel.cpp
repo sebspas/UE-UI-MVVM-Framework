@@ -2,8 +2,8 @@
 
 auto
 	UViewModel::
-	RegisterOnPropertyChanged(const FName& PropertyName, const FViewModelPropertyChanged& PropertyChanged)
-	-> void
+	RegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChanged)
+-> void
 {
 	auto& ValueFound = RegisteredPropertyMulticast.Add(PropertyName);
 	ValueFound.Add(PropertyChanged);
@@ -11,8 +11,8 @@ auto
 
 auto
 	UViewModel::
-	UnRegisterOnPropertyChanged(const FName& PropertyName, const FViewModelPropertyChanged& PropertyChanged)
-	-> void
+	UnRegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChanged)
+-> void
 {
 	const auto ValueFound = RegisteredPropertyMulticast.Find(PropertyName);
 	if(ValueFound)
@@ -21,7 +21,7 @@ auto
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("The property %s was never properly registered"), PropertyName);
+		UE_LOG(LogTemp, Error, TEXT("The property %s was never properly registered"), *PropertyName.ToString());
 	}
 }
 

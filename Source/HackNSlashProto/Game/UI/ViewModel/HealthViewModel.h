@@ -3,10 +3,13 @@
 
 #include "HealthViewModel.generated.h"
 
-UCLASS()
+UCLASS(BlueprintType)
 class UHealthViewModel final : public UViewModel
 {
 	GENERATED_BODY()
 public:
+	virtual auto Initalize() -> void override;
+	virtual auto Update(float DeltaSeconds) -> void;
+	
 	virtual auto DiffViewModelObject() -> void override;
 };
