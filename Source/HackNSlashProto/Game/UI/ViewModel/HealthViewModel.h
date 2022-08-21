@@ -10,6 +10,4 @@ class UHealthViewModel final : public UViewModel
 public:
 	virtual auto Initalize() -> void override;
 	virtual auto Update(float DeltaSeconds) -> void;
-	
-	virtual auto DiffViewModelObject() -> void override;
 };

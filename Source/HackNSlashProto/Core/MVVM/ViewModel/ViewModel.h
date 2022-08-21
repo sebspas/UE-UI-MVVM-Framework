@@ -22,6 +22,8 @@ public:
 	// This is used as a helped in the actual viewModel to call the templated version below
 	virtual void DiffViewModelObject() PURE_VIRTUAL(UViewModel::DiffViewModelObject,);
 
+	auto ProcessChanges() -> void;
+
 	UFUNCTION(BlueprintCallable)
 	void RegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChanged);
 
@@ -34,8 +36,8 @@ public:
 	UViewModelObject* GetViewModelObject() const { return View_ViewModelObject; }
 
 protected:
-	template <class ViewModel, class ViewModelObjectType>
-	static void DiffViewModelObjectTemplate(ViewModel* VM, ViewModelObjectType* OldViewModelObject, ViewModelObjectType* NewViewModelObject);
+	void QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const FName& PropertyChange);
+	void QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const TArray<FName>& PropertiesChange);
 
 	UPROPERTY()
 	UViewModelObject* ViewModelObject;
@@ -43,30 +45,14 @@ protected:
 	UPROPERTY()
 	UViewModelObject* View_ViewModelObject;
 	
+private:
 	TMap<FName, TArray<FViewModelPropertyChanged>> RegisteredPropertyMulticast;
-};
 
-template <class ViewModel, class ViewModelObjectType>
-void UViewModel::DiffViewModelObjectTemplate(ViewModel* VM, ViewModelObjectType* OldViewModelObject, ViewModelObjectType* NewViewModelObject)
-{
-	TFieldIterator<FProperty> oldPropertyIt(OldViewModelObject->GetClass());
-	TFieldIterator<FProperty> newPropertyIt(NewViewModelObject->GetClass());
-	
-	for (; oldPropertyIt && newPropertyIt; ++oldPropertyIt, ++newPropertyIt)
+	struct SPropertiesChange
 	{
-		const FProperty* OldStructProp = *oldPropertyIt;
-		const FProperty* NewStructProp = *newPropertyIt;
+		TArray<FName> PropertiesChanged;
+		std::function<void(UViewModelObject*)> ChangeLambda;
+	};
 	
-		auto OldPropertyPtr = OldStructProp->ContainerPtrToValuePtr<void>(OldViewModelObject);
-		auto NewPropertyPtr = NewStructProp->ContainerPtrToValuePtr<void>(NewViewModelObject);
-
-		if(!oldPropertyIt->Identical(OldPropertyPtr, NewPropertyPtr))
-		{
-			//TODO not sure the compare is properly working
-			//TODO the view_object is not actually updated anywhere so even if the compare work it's always the old value
-			// Not Identical properties, send event
-			FName PropertyFName(OldStructProp->GetName());
-			VM->OnPropertyChangedEvent(PropertyFName);
-		}
-	}
-}
+	TQueue<SPropertiesChange> ViewModelToViewQueue;
+};

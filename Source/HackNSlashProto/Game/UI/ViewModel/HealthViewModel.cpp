@@ -10,6 +10,9 @@ auto
 {
 	ViewModelObject = NewObject<UHealthViewModelObject>();
 	View_ViewModelObject = NewObject<UHealthViewModelObject>();
+
+	GetActor()
+	
 }
 
 void UHealthViewModel::Update(float DeltaSeconds)
@@ -18,16 +21,10 @@ void UHealthViewModel::Update(float DeltaSeconds)
 
 	if(healthViewModelObject->Current + 0.5 <= healthViewModelObject->MaxHealth)
 	{
-		healthViewModelObject->Current += 0.5;
+		QueueVMObjectChange([](UViewModelObject* ViewModelModelObject)
+		{
+			auto healthViewModelObject = dynamic_cast<UHealthViewModelObject*>(ViewModelModelObject);
+			healthViewModelObject->Current += 0.5;
+		}, FName("Current"));
 	}
-}
-
-auto
-	UHealthViewModel::
-	DiffViewModelObject()
-	-> void
-{
-	DiffViewModelObjectTemplate<UHealthViewModel, UHealthViewModelObject>(this,
-			(UHealthViewModelObject*)View_ViewModelObject,
-			(UHealthViewModelObject*)ViewModelObject);
 }

@@ -26,14 +26,14 @@ void UMvvmSystem::Update(float DeltaSeconds)
 		}
 	}();
 	
-	// Diff the view model of the view and the one of the viewmodel
+	// Process the changes queue and forward update notification
 	// Trigger the event related to the different property that changed in the view model
 	// This needs to be done in the main thread
 	[this, DeltaSeconds]()
 	{
 		for (auto& viewModelTuple : ViewModelsTypeToViewModels)
 		{
-			viewModelTuple.Value->DiffViewModelObject();
+			viewModelTuple.Value->ProcessChanges();
 		}
 	}();
 }

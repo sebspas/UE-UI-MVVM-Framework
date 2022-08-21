@@ -1,5 +1,7 @@
 ﻿#include "ViewModel.h"
 
+#include "HackNSlashProto/Core/MVVM/MVVMSystem.h"
+
 auto
 	UViewModel::
 	RegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChanged)
@@ -38,5 +40,44 @@ auto
 		{
 			Delegate.ExecuteIfBound();
 		}
+	}
+}
+
+auto
+	UViewModel::QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const FName& PropertyChange)
+	-> void
+{
+	SPropertiesChange newPropertyChange = {{PropertyChange}, LambdaChange};
+	ViewModelToViewQueue.Enqueue(newPropertyChange);
+}
+
+auto
+	UViewModel::QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const TArray<FName>& PropertiesChanged)
+	-> void
+{
+	SPropertiesChange newPropertiesChanges = {PropertiesChanged, LambdaChange};
+	ViewModelToViewQueue.Enqueue(newPropertiesChanges);
+}
+
+auto
+	UViewModel::
+	ProcessChanges()
+	-> void
+{
+	while (!ViewModelToViewQueue.IsEmpty())
+	{
+		const SPropertiesChange* QueuedChanged = ViewModelToViewQueue.Peek();
+		
+		// Update both ViewModelObject to the new Value
+		QueuedChanged->ChangeLambda(ViewModelObject);
+		QueuedChanged->ChangeLambda(View_ViewModelObject);
+
+		// Inform that the property has just changed
+		for (auto propertyName : QueuedChanged->PropertiesChanged)
+		{
+			OnPropertyChangedEvent(propertyName);
+		}
+
+		ViewModelToViewQueue.Pop();
 	}
 }
