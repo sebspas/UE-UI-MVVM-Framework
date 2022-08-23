@@ -1,19 +1,5 @@
 ﻿#include "MVVMSystem.h"
 
-void UMvvmSystem::Initialize(const FSystemInfos& infos)
-{
-	UCoreSystem::Initialize(infos);
-	
-	// Call the init on the different ViewModel
-	[this]()
-	{
-		for (auto& viewModelTuple : ViewModelsTypeToViewModels)
-		{
-			viewModelTuple.Value->Initalize();
-		}
-	}();
-}
-
 void UMvvmSystem::Update(float DeltaSeconds)
 {
 	// Update the ViewModel that are registered here
@@ -43,16 +29,20 @@ auto
 	RegisterView(UView* View)
 	-> void
 {
+	auto OwnerActor = View->GetOwningActor();
+	ensureMsgf(OwnerActor, TEXT("Owner Actor is empty when registering view %s"), *View->GetName());
+	
 	for (auto& ViewModelsRegistered : View->GetViewModelsRegistered())
 	{
 		auto viewModelType = ViewModelsRegistered.ViewModelType;
-
-		auto viewModel = ViewModelsTypeToViewModels.Find(viewModelType);
+		auto viewModelActorInfos = ViewModelAndActorKey{OwnerActor->GetUniqueID(), viewModelType};
+		
+		auto viewModel = ViewModelsTypeToViewModels.Find(viewModelActorInfos);
 		if(viewModel)
 		{
 			// ViewModel exist simply check the view and update the pointer in it for this viewModel
 
-			const auto viewList = ViewModelsToViews.Find(viewModelType);
+			const auto viewList = ViewModelsToViews.Find(viewModelActorInfos);
 			if(!viewList)
 			{
 				UE_LOG(LogTemp, Error, TEXT("No Views where registered but a ViewModel still exist this shouldn't happens."));
@@ -69,15 +59,15 @@ auto
 			auto newViewModel = NewObject<UViewModel>(this, viewModelType);
 
 			//TODO see if Initializing here is an issue but shoudn't be
-			newViewModel->Initalize();
+			newViewModel->Initalize(OwnerActor);
 
 			ViewModelsRegistered.ViewModel = newViewModel;
-			ViewModelsTypeToViewModels.Add(viewModelType, newViewModel);
+			ViewModelsTypeToViewModels.Add(viewModelActorInfos, newViewModel);
 
 			auto newViewList = TArray<const UView*>();
 			newViewList.Add(View);
 
-			ViewModelsToViews.Add(viewModelType, newViewList);
+			ViewModelsToViews.Add(viewModelActorInfos, newViewList);
 		}
 	}
 }
@@ -87,14 +77,20 @@ auto
 	UnRegisterView(UView* View)
 	-> void
 {
+	auto OwnerActor = View->GetOwningActor();
+	ensureMsgf(OwnerActor, TEXT("Owner Actor is empty when unregistering view %s"), *View->GetName());
+	
 	for (auto ViewModelsRegistered : View->GetViewModelsRegistered())
 	{
 		auto viewModelType = ViewModelsRegistered.ViewModelType;
-
-		auto viewModel = ViewModelsTypeToViewModels.Find(viewModelType);
+		auto viewModelActorInfos = ViewModelAndActorKey{OwnerActor->GetUniqueID(), viewModelType};
+		
+		auto viewModel = ViewModelsTypeToViewModels.Find(viewModelActorInfos);
 		if(viewModel)
 		{
-			const auto viewList = ViewModelsToViews.Find(viewModelType);
+			(*viewModel)->Destroy(OwnerActor);
+			
+			const auto viewList = ViewModelsToViews.Find(viewModelActorInfos);
 			if(!viewList)
 			{
 				UE_LOG(LogTemp, Error, TEXT("No Views where registered but a ViewModel still exist this shouldn't happens."));
@@ -106,8 +102,8 @@ auto
 			// If no views are still using this ViewModel we can clean up everything
 			if(viewList->IsEmpty())
 			{
-				ViewModelsTypeToViewModels.Remove(viewModelType);
-				ViewModelsToViews.Remove(viewModelType);
+				ViewModelsTypeToViewModels.Remove(viewModelActorInfos);
+				ViewModelsToViews.Remove(viewModelActorInfos);
 			}
 		}
 		else

@@ -14,13 +14,14 @@ public:
 	UMvvmSystem() {}
 	virtual ~UMvvmSystem() override = default;
 	
-	virtual void Initialize(const FSystemInfos& infos) override;
 	virtual void Update(float DeltaSeconds) override;
 
 	auto RegisterView(UView* View) -> void;
 	auto UnRegisterView(UView* View) -> void;
 
 private:
-	TMap<TSubclassOf<UViewModel>, UViewModel*> ViewModelsTypeToViewModels;
-	TMap<TSubclassOf<UViewModel>, TArray<const UView*>> ViewModelsToViews;
+	using ViewModelAndActorKey = TTuple<uint32, TSubclassOf<UViewModel>>;
+	
+	TMap<ViewModelAndActorKey, UViewModel*> ViewModelsTypeToViewModels;
+	TMap<ViewModelAndActorKey, TArray<const UView*>> ViewModelsToViews;
 };

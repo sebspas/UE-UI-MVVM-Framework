@@ -24,8 +24,12 @@ class UView : public UUserWidget
 	GENERATED_BODY()
 	
 public:
-	// Create the requested ViewModels using the MVVMSystem
-	virtual bool Initialize() override;
+	// Called by the user when creating the view, with the parent OwningActor
+	UFUNCTION(BlueprintCallable)
+	void InitializeView(AActor* NewOwningActor);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnViewInitialized();
 
 	// Destroyed the requested ViewModels and clear the Listener
 	virtual void RemoveFromParent() override;
@@ -33,8 +37,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 	UViewModel* GetViewModelByType(TSubclassOf<UViewModel> ViewModelType) const;
 	
+	AActor* GetOwningActor() const { return OwningActor; }
+	
 	auto GetViewModelsRegistered() -> TArray<FViewModelStruct>&;
 
+public:
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
 	TArray<FViewModelStruct> ViewModels;
+
+	UPROPERTY(BlueprintReadOnly)
+	AActor* OwningActor;
 };

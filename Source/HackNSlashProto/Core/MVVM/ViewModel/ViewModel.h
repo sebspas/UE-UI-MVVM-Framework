@@ -16,11 +16,9 @@ public:
 	UViewModel() {}
 	virtual ~UViewModel() override = default;
 	
-	virtual void Initalize() {}
-	virtual void Update(float DeltaSeconds) {}	
-
-	// This is used as a helped in the actual viewModel to call the templated version below
-	virtual void DiffViewModelObject() PURE_VIRTUAL(UViewModel::DiffViewModelObject,);
+	virtual void Initalize(AActor* OwnerActor) {}
+	virtual void Destroy(AActor* OwnerActor) {}
+	virtual void Update(float DeltaSeconds) {}
 
 	auto ProcessChanges() -> void;
 

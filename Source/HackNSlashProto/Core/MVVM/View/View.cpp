@@ -5,25 +5,26 @@
 #include "HackNSlashProto/Core/MVVM/ViewModel/ViewModel.h"
 #include "Kismet/GameplayStatics.h"
 
-bool UView::Initialize()
+void UView::InitializeView(AActor* NewOwningActor)
 {
+	ensureMsgf(NewOwningActor, TEXT("Owner Actor is empty when calling InitializeView for view %s"), *GetName());
+	OwningActor = NewOwningActor;
+	
 	const auto GameMode = dynamic_cast<AHackNSlashProtoGameMode*>(UGameplayStatics::GetGameMode(GetWorld()));
 	if(!GameMode)
 	{
 		UE_LOG(LogTemp, Error, TEXT("No GameMode Found"));
-		return UUserWidget::Initialize();
 	}
 
 	auto MVVMSystem = dynamic_cast<UMvvmSystem*>(GameMode->GetSystem(UMvvmSystem::StaticClass()));
 	if(!MVVMSystem)
 	{
 		UE_LOG(LogTemp, Error, TEXT("No MvvmSystem Found"));
-		return UUserWidget::Initialize();
 	}
 
 	MVVMSystem->RegisterView(this);
-	
-	return UUserWidget::Initialize();
+
+	OnViewInitialized();
 }
 
 void UView::RemoveFromParent()
