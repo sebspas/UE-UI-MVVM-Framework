@@ -6,7 +6,7 @@
 
 auto
 	UHealthViewModel::
-	Initalize(AActor* OwnerActor)
+	Initialize(AActor* OwnerActor)
 -> void
 {
 	ViewModelObject = NewObject<UHealthViewModelObject>();

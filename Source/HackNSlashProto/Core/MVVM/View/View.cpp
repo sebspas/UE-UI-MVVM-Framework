@@ -3,6 +3,7 @@
 #include "HackNSlashProto/HackNSlashProtoGameMode.h"
 #include "HackNSlashProto/Core/MVVM/MVVMSystem.h"
 #include "HackNSlashProto/Core/MVVM/ViewModel/ViewModel.h"
+#include "HackNSlashProto/Core/System/ErrorDefine.h"
 #include "Kismet/GameplayStatics.h"
 
 void UView::InitializeView(AActor* NewOwningActor)
@@ -13,13 +14,15 @@ void UView::InitializeView(AActor* NewOwningActor)
 	const auto GameMode = dynamic_cast<AHackNSlashProtoGameMode*>(UGameplayStatics::GetGameMode(GetWorld()));
 	if(!GameMode)
 	{
-		UE_LOG(LogTemp, Error, TEXT("No GameMode Found"));
+		CORE_LOG(LogUIMVVM, TEXT("No GameMode Found"));
+		return;
 	}
 
-	auto MVVMSystem = dynamic_cast<UMvvmSystem*>(GameMode->GetSystem(UMvvmSystem::StaticClass()));
+	const auto MVVMSystem = dynamic_cast<UMvvmSystem*>(GameMode->GetSystem(UMvvmSystem::StaticClass()));
 	if(!MVVMSystem)
 	{
-		UE_LOG(LogTemp, Error, TEXT("No MvvmSystem Found"));
+		CORE_LOG(LogUIMVVM, TEXT("No MvvmSystem Found"));
+		return;
 	}
 
 	MVVMSystem->RegisterView(this);
@@ -32,14 +35,14 @@ void UView::RemoveFromParent()
 	const auto GameMode = dynamic_cast<AHackNSlashProtoGameMode*>(UGameplayStatics::GetGameMode(GetWorld()));
 	if(!GameMode)
 	{
-		UE_LOG(LogTemp, Error, TEXT("No GameMode Found"));
+		CORE_LOG(LogUIMVVM, TEXT("No GameMode Found"));
 		return;
 	}
 
-	auto MVVMSystem = dynamic_cast<UMvvmSystem*>(GameMode->GetSystem(UMvvmSystem::StaticClass()));
+	const auto MVVMSystem = dynamic_cast<UMvvmSystem*>(GameMode->GetSystem(UMvvmSystem::StaticClass()));
 	if(!MVVMSystem)
 	{
-		UE_LOG(LogTemp, Error, TEXT("No MvvmSystem Found"));
+		CORE_LOG(LogUIMVVM, TEXT("No MvvmSystem Found"));
 		return;
 	}
 
@@ -57,7 +60,7 @@ auto
 	{
 		if(ViewModelStruct.ViewModelType == ViewModelType)
 		{
-			auto ViewModelPtr = ViewModelStruct.ViewModel.Get();
+			const auto ViewModelPtr = ViewModelStruct.ViewModel.Get();
 			if(!IsValid(ViewModelPtr))
 			{
 				return nullptr;
@@ -67,7 +70,7 @@ auto
 		}
 	}
 
-	UE_LOG(LogTemp, Error, TEXT("ViewModel of type %s wasn't found, make sure you requested it in the viewmodel array"), *ViewModelType->GetName());
+	CORE_LOGM(LogTemp, "ViewModel of type %s wasn't found, make sure you requested it in the viewmodel array", *ViewModelType->GetName());
 	return nullptr;
 }
 

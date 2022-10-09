@@ -22,7 +22,7 @@ UCLASS(BlueprintType, Blueprintable)
 class UView : public UUserWidget
 {
 	GENERATED_BODY()
-	
+
 public:
 	// Called by the user when creating the view, with the parent OwningActor
 	UFUNCTION(BlueprintCallable)

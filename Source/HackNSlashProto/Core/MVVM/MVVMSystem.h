@@ -5,6 +5,8 @@
 
 #include "MvvmSystem.generated.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(LogUIMVVM, Log, All);
+
 UCLASS(BlueprintType)
 class UMvvmSystem final : public UCoreSystem
 {

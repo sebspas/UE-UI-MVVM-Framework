@@ -1,29 +1,38 @@
 ﻿#include "ViewModel.h"
 
 #include "HackNSlashProto/Core/MVVM/MVVMSystem.h"
+#include "HackNSlashProto/Core/System/ErrorDefine.h"
 
 auto
 	UViewModel::
-	RegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChanged)
+	RegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChangedDelegate)
 -> void
 {
-	auto& ValueFound = RegisteredPropertyMulticast.Add(PropertyName);
-	ValueFound.Add(PropertyChanged);
+	const auto PropertyChangeListener = RegisteredPropertyMulticast.Find(PropertyName);
+	if(PropertyChangeListener)
+	{
+		PropertyChangeListener->Add(PropertyChangedDelegate);
+	}
+	else
+	{
+		auto& ValueFound = RegisteredPropertyMulticast.Add(PropertyName);
+		ValueFound.Add(PropertyChangedDelegate);
+	}
 }
 
 auto
 	UViewModel::
-	UnRegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChanged)
+	UnRegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChangedDelegate)
 -> void
 {
 	const auto ValueFound = RegisteredPropertyMulticast.Find(PropertyName);
 	if(ValueFound)
 	{
-		ValueFound->Remove(PropertyChanged);
+		ValueFound->Remove(PropertyChangedDelegate);
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("The property %s was never properly registered"), *PropertyName.ToString());
+		CORE_LOGM(LogUIMVVM, "The property %s was never properly registered", *PropertyName.ToString());
 	}
 }
 
@@ -32,7 +41,7 @@ auto
 	OnPropertyChangedEvent(const FName& PropertyName)
 	-> void
 {
-	auto DelegateArrayPtr = RegisteredPropertyMulticast.Find(PropertyName);
+	const auto DelegateArrayPtr = RegisteredPropertyMulticast.Find(PropertyName);
 	if(DelegateArrayPtr)
 	{
 		auto DelegateArray = *DelegateArrayPtr;
@@ -47,16 +56,16 @@ auto
 	UViewModel::QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const FName& PropertyChange)
 	-> void
 {
-	SPropertiesChange newPropertyChange = {{PropertyChange}, LambdaChange};
-	ViewModelToViewQueue.Enqueue(newPropertyChange);
+	const SPropertiesChange NewPropertyChange = {{PropertyChange}, LambdaChange};
+	ViewModelToViewQueue.Enqueue(NewPropertyChange);
 }
 
 auto
 	UViewModel::QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const TArray<FName>& PropertiesChanged)
 	-> void
 {
-	SPropertiesChange newPropertiesChanges = {PropertiesChanged, LambdaChange};
-	ViewModelToViewQueue.Enqueue(newPropertiesChanges);
+	const SPropertiesChange NewPropertiesChanges = {PropertiesChanged, LambdaChange};
+	ViewModelToViewQueue.Enqueue(NewPropertiesChanges);
 }
 
 auto

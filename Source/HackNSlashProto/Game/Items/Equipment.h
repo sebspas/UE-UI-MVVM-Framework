@@ -17,7 +17,7 @@ struct FModifier
 	float Percentage = 1.f;
 
 	UPROPERTY(EditAnywhere)
-	UStat* Stat;
+	UStat* Stat = nullptr;
 };
 
 UCLASS()

@@ -22,7 +22,7 @@ struct FStatLine
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere)
-	UStat* Stat;
+	UStat* Stat = nullptr;
 	
 	UPROPERTY(EditAnywhere)
 	float Base = 0.f;

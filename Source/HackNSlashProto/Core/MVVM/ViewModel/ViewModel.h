@@ -16,17 +16,17 @@ public:
 	UViewModel() {}
 	virtual ~UViewModel() override = default;
 	
-	virtual void Initalize(AActor* OwnerActor) {}
+	virtual void Initialize(AActor* OwnerActor) {}
 	virtual void Destroy(AActor* OwnerActor) {}
 	virtual void Update(float DeltaSeconds) {}
 
 	auto ProcessChanges() -> void;
 
 	UFUNCTION(BlueprintCallable)
-	void RegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChanged);
+	void RegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChangedDelegate);
 
 	UFUNCTION(BlueprintCallable)
-	void UnRegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChanged);
+	void UnRegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChangedDelegate);
 
 	auto OnPropertyChangedEvent(const FName& PropertyName) -> void;
 
