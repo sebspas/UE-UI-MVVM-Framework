@@ -3,9 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Core/System/CoreSystem.h"
 #include "GameFramework/GameModeBase.h"
 #include "HackNSlashProtoGameMode.generated.h"
+
+class IUpdatableSubSystem;
 
 UCLASS(minimalapi)
 class AHackNSlashProtoGameMode : public AGameModeBase
@@ -19,14 +20,8 @@ public:
 
 	virtual void Tick(float DeltaSeconds) override;
 
-	auto GetSystem(TSubclassOf<UCoreSystem> SystemType) const -> UCoreSystem*;
-
-public:
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-	TArray<FSystemInfos> GameSystemsInfos;
-
 private:
-	TArray<UCoreSystem*> Systems;
+	TArray<IUpdatableSubSystem*> Systems;
 };
 
 

@@ -1,7 +1,7 @@
 ﻿#include "ViewModel.h"
 
-#include "HackNSlashProto/Core/MVVM/MVVMSystem.h"
-#include "HackNSlashProto/Core/System/ErrorDefine.h"
+#include "../MVVMSystem.h"
+#include "../../System/ErrorDefine.h"
 
 auto
 	UViewModel::

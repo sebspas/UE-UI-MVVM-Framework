@@ -1,8 +1,8 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
-#include "HackNSlashProto/Core/MVVM/View/View.h"
-#include "HackNSlashProto/Core/MVVM/ViewModelObject/ViewModelObject.h"
+#include "../View/View.h"
+#include "../ViewModelObject/ViewModelObject.h"
 
 #include "ViewModel.generated.h"
 

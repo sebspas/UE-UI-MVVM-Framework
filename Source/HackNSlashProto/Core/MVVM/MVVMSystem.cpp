@@ -1,8 +1,27 @@
 ﻿#include "MVVMSystem.h"
 
-#include "HackNSlashProto/Core/System/ErrorDefine.h"
+#include "../System/ErrorDefine.h"
+#include "Kismet/GameplayStatics.h"
 
 DEFINE_LOG_CATEGORY(LogUIMVVM);
+
+void UMvvmSystem::Deinitialize()
+{
+	TSet<UView*> ViewsToUnregister;
+	
+	for(auto VMToViews : ViewModelsToViews)
+	{
+		ViewsToUnregister.Append(VMToViews.Value);
+	}
+	
+	for (auto View : ViewsToUnregister)
+	{
+		UnRegisterView(View);
+		View->SetIsRegisteredToMvvm(false);
+	}
+	
+	Super::Deinitialize();
+}
 
 void UMvvmSystem::Update(float DeltaSeconds)
 {
@@ -26,6 +45,21 @@ void UMvvmSystem::Update(float DeltaSeconds)
 			ViewModelTuple.Value->ProcessChanges();
 		}
 	}();
+}
+
+auto
+	UMvvmSystem::
+	GetUMvvmSystem(UObject* Object)
+	-> UMvvmSystem*
+{
+	const auto GameInstance = UGameplayStatics::GetGameInstance(Object);
+	if(!GameInstance)
+	{
+		CORE_LOG(LogUIMVVM, TEXT("No GameInstance Found"));
+		return nullptr;
+	} 
+	return GameInstance->GetSubsystem<UMvvmSystem>();
+
 }
 
 auto
@@ -66,7 +100,7 @@ auto
 			ViewModelsRegistered.ViewModel = newViewModel;
 			ViewModelsTypeToViewModels.Add(ViewModelActorInfos, newViewModel);
 
-			auto newViewList = TArray<const UView*>();
+			auto newViewList = TArray<UView*>();
 			newViewList.Add(View);
 
 			ViewModelsToViews.Add(ViewModelActorInfos, newViewList);

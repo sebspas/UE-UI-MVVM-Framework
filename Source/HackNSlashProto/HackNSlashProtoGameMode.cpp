@@ -2,6 +2,11 @@
 
 #include "HackNSlashProtoGameMode.h"
 
+#include "HackNSlashProto.h"
+#include "Core/MVVM/MVVMSystem.h"
+#include "Core/System/ErrorDefine.h"
+#include "Kismet/GameplayStatics.h"
+
 AHackNSlashProtoGameMode::AHackNSlashProtoGameMode()
 {
 	PrimaryActorTick.bStartWithTickEnabled = true;
@@ -12,15 +17,14 @@ void AHackNSlashProtoGameMode::InitGame(const FString& MapName, const FString& O
 {
 	Super::InitGame(MapName, Options, ErrorMessage);
 
-	for (auto systemInfos : GameSystemsInfos)
+	const auto MVVMSystem = UMvvmSystem::GetUMvvmSystem(GetOuter());
+	if(!MVVMSystem)
 	{
-		auto newSystem = NewObject<UCoreSystem>(this, systemInfos.SystemType);
-
-		//TODO Move this to another place
-		newSystem->Initialize(systemInfos);
-		
-		Systems.Add(newSystem);
+		CORE_LOG(LogHackNSlashProto, TEXT("No MvvmSystem Found"));
+		return;
 	}
+
+	Systems.Add(MVVMSystem);
 }
 
 void AHackNSlashProtoGameMode::Tick(float DeltaSeconds)
@@ -31,21 +35,4 @@ void AHackNSlashProtoGameMode::Tick(float DeltaSeconds)
 	{
 		system->Update(DeltaSeconds);
 	}
-}
-
-auto
-	AHackNSlashProtoGameMode::
-	GetSystem(TSubclassOf<UCoreSystem> SystemType) const
-	-> UCoreSystem*
-{
-	for (auto system : Systems)
-	{
-		if(SystemType == system->GetClass())
-		{
-			return system;
-		}
-	}
-
-	UE_LOG(LogTemp, Error, TEXT("The system %s was never properly registered"), *SystemType->GetName());
-	return nullptr;
 }

@@ -41,10 +41,15 @@ public:
 	
 	auto GetViewModelsRegistered() -> TArray<FViewModelStruct>&;
 
+	auto SetIsRegisteredToMvvm(bool IsRegisteredToMvvm) -> void;
+
 public:
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
 	TArray<FViewModelStruct> ViewModels;
 
 	UPROPERTY(BlueprintReadOnly)
 	AActor* OwningActor;
+
+private:
+	bool IsRegisteredToMVVM = false;
 };

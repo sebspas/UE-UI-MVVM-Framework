@@ -1,9 +1,8 @@
 ﻿#include "View.h"
 
-#include "HackNSlashProto/HackNSlashProtoGameMode.h"
-#include "HackNSlashProto/Core/MVVM/MVVMSystem.h"
-#include "HackNSlashProto/Core/MVVM/ViewModel/ViewModel.h"
-#include "HackNSlashProto/Core/System/ErrorDefine.h"
+#include "../MVVMSystem.h"
+#include "../ViewModel/ViewModel.h"
+#include "../../System/ErrorDefine.h"
 #include "Kismet/GameplayStatics.h"
 
 void UView::InitializeView(AActor* NewOwningActor)
@@ -11,14 +10,7 @@ void UView::InitializeView(AActor* NewOwningActor)
 	ensureMsgf(NewOwningActor, TEXT("Owner Actor is empty when calling InitializeView for view %s"), *GetName());
 	OwningActor = NewOwningActor;
 	
-	const auto GameMode = dynamic_cast<AHackNSlashProtoGameMode*>(UGameplayStatics::GetGameMode(GetWorld()));
-	if(!GameMode)
-	{
-		CORE_LOG(LogUIMVVM, TEXT("No GameMode Found"));
-		return;
-	}
-
-	const auto MVVMSystem = dynamic_cast<UMvvmSystem*>(GameMode->GetSystem(UMvvmSystem::StaticClass()));
+	const auto MVVMSystem = UMvvmSystem::GetUMvvmSystem(GetOuter());
 	if(!MVVMSystem)
 	{
 		CORE_LOG(LogUIMVVM, TEXT("No MvvmSystem Found"));
@@ -26,20 +18,19 @@ void UView::InitializeView(AActor* NewOwningActor)
 	}
 
 	MVVMSystem->RegisterView(this);
+	IsRegisteredToMVVM = true;
 
 	OnViewInitialized();
 }
 
 void UView::RemoveFromParent()
 {
-	const auto GameMode = dynamic_cast<AHackNSlashProtoGameMode*>(UGameplayStatics::GetGameMode(GetWorld()));
-	if(!GameMode)
+	if(!IsRegisteredToMVVM)
 	{
-		CORE_LOG(LogUIMVVM, TEXT("No GameMode Found"));
 		return;
 	}
-
-	const auto MVVMSystem = dynamic_cast<UMvvmSystem*>(GameMode->GetSystem(UMvvmSystem::StaticClass()));
+	
+	const auto MVVMSystem = UMvvmSystem::GetUMvvmSystem(GetOuter());
 	if(!MVVMSystem)
 	{
 		CORE_LOG(LogUIMVVM, TEXT("No MvvmSystem Found"));
@@ -47,6 +38,7 @@ void UView::RemoveFromParent()
 	}
 
 	MVVMSystem->UnRegisterView(this);
+	IsRegisteredToMVVM = false;
 	
 	UUserWidget::RemoveFromParent();
 }
@@ -80,4 +72,12 @@ auto
 	-> TArray<FViewModelStruct>&
 {
 	return ViewModels;
+}
+
+auto
+	UView::
+	SetIsRegisteredToMvvm(bool IsRegisteredToMvvm)
+	-> void
+{
+	IsRegisteredToMVVM = IsRegisteredToMvvm;
 }
