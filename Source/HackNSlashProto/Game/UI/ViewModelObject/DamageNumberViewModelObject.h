@@ -3,8 +3,6 @@
 
 #include "DamageNumberViewModelObject.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FChangeDamageNumberVisibility, uint8, Index, bool, Visible);
-
 USTRUCT(BlueprintType)
 struct FDamageNumber
 {
@@ -12,9 +10,6 @@ struct FDamageNumber
 
 	UPROPERTY(BlueprintReadOnly)
 	bool IsActive = false;
-	
-	UPROPERTY(BlueprintReadOnly)
-	uint8 Index = 0;
 	
 	UPROPERTY(BlueprintReadOnly)
 	float Value = 0.f;
@@ -42,7 +37,4 @@ public:
 
 	UPROPERTY(BlueprintReadOnly)
 	bool IsVisibleOnScreen = false;
-
-	UPROPERTY(BlueprintAssignable)
-	FChangeDamageNumberVisibility ChangeDamageNumberVisibility;
 };

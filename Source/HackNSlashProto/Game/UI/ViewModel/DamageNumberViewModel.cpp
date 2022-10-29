@@ -19,7 +19,7 @@ auto
 	const auto HealthComponent = OwnerActor->FindComponentByClass<UHealth>();
 	if(!HealthComponent)
 	{
-		UE_LOG(LogTemp, Error, TEXT("The health component is not present on %s when Initialize is called"), *OwnerActor->GetName());
+		CORE_LOGM(LogHackNSlashProto, "The health component is not present on %s when Initialize is called", *OwnerActor->GetName());
 		return;
 	}
 
@@ -37,7 +37,7 @@ void UDamageNumberViewModel::Destroy(AActor* Actor)
 	const auto healthComponent = Cast<UHealth>(OwnerActor->GetComponentByClass(UHealth::StaticClass()));
 	if(!healthComponent)
 	{
-		UE_LOG(LogTemp, Error, TEXT("The health component is not present on %s when Destroy is called"), *OwnerActor->GetName());
+		CORE_LOGM(LogHackNSlashProto, "The health component is not present on %s when Destroy is called", *OwnerActor->GetName());
 		return;
 	}
 	
@@ -56,43 +56,54 @@ auto
 	
 	// Calculate the Actor owner position on the player screen and send it to the View
 	auto PlayerController = UGameplayStatics::GetPlayerController(GetOuter(), 0);
+	auto ScreenActorLocation = DamageNumberViewModelObject->ActorScreenLocation;
 	if(PlayerController)
 	{
-		FVector2D ScreenActorLocation;
 		bool IsVisible = PlayerController->ProjectWorldLocationToScreen(OwnerActor->GetActorLocation(), ScreenActorLocation, true);
-		
-		QueueVMObjectChange([DeltaSeconds, ScreenActorLocation, IsVisible](UViewModelObject* ViewModelModelObject)
+
+		if(DamageNumberViewModelObject->IsVisibleOnScreen != IsVisible)
 		{
-			const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelModelObject);
-			DamageNumberViewModelObject->ActorScreenLocation = ScreenActorLocation;
-			DamageNumberViewModelObject->IsVisibleOnScreen = IsVisible;
-			DamageNumberViewModelObject->DeltaTime = IsVisible;
-					
-		}, {FName("ActorScreenLocation"), FName("IsVisibleOnScreen")});
-		
+			QueueVMObjectChange([IsVisible](UViewModelObject* ViewModelModelObject)
+			{
+				const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelModelObject);
+				DamageNumberViewModelObject->IsVisibleOnScreen = IsVisible;
+						
+			}, {FName("IsVisibleOnScreen")});
+		}
 	}
 
+	auto HasAnyActiveMarker = false;
 	// Update the local VM LifeSpan and if necessary change the visibility of the appropriate number
-	
-	uint8 Index = 0;
-	for(auto& DamageNumber : DamageNumberViewModelObject->DamageNumbers)
+	for (int i = 0; i < DamageNumberViewModelObject->DamageNumbers.Num(); ++i)
 	{
-		if(DamageNumber.LifeSpan != 0)
+		auto& DamageNumber = DamageNumberViewModelObject->DamageNumbers[i];
+		if(DamageNumber.IsActive)
 		{
+			HasAnyActiveMarker = true;
 			DamageNumber.LifeSpan-= DeltaSeconds;
 
 			if(DamageNumber.LifeSpan <= 0)
 			{
-				QueueVMObjectChange([Index](UViewModelObject* ViewModelModelObject)
+				QueueVMObjectChange([i](UViewModelObject* ViewModelModelObject)
 				{
 					const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelModelObject);
-					DamageNumberViewModelObject->DamageNumbers[Index].IsActive = false;
-					DamageNumberViewModelObject->DamageNumbers[Index].LifeSpan = 0.f; 
+					DamageNumberViewModelObject->DamageNumbers[i].IsActive = false;
+					DamageNumberViewModelObject->DamageNumbers[i].LifeSpan = 0.f; 
 					
 				}, {FName("IsActive")});
 			}
 		}
-		Index++;
+	}
+
+	if(HasAnyActiveMarker)
+	{
+		QueueVMObjectChange([DeltaSeconds, ScreenActorLocation](UViewModelObject* ViewModelModelObject)
+		{
+			const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelModelObject);
+			DamageNumberViewModelObject->ActorScreenLocation = ScreenActorLocation;
+			DamageNumberViewModelObject->DeltaTime = DeltaSeconds;
+						
+		}, {FName("ActorScreenLocation")});
 	}
 }
 
@@ -121,11 +132,8 @@ auto
 		}
 		
 		FDamageNumber& SelectedDamageNumber = DamageNumberViewModelObject->DamageNumbers[SelectedIndex];
-		SelectedDamageNumber.Index = SelectedIndex;
 		SelectedDamageNumber.Value = Delta;
-		SelectedDamageNumber.LifeSpan = 1.7f; // Could be data driven in the view
+		SelectedDamageNumber.LifeSpan = 0.5f; // Could be data driven in the view
 		SelectedDamageNumber.IsActive = true;
-
-		DamageNumberViewModelObject->ChangeDamageNumberVisibility.Broadcast(SelectedIndex, true);
 	}, {FName("DamageNumbers")});
 }
