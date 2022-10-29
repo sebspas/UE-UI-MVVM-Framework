@@ -68,6 +68,11 @@ auto
 	ViewModelToViewQueue.Enqueue(NewPropertiesChanges);
 }
 
+void UViewModel::Initialize(AActor* Actor)
+{
+	OwnerActor = Actor;
+}
+
 auto
 	UViewModel::
 	ProcessChanges()

@@ -16,8 +16,8 @@ public:
 	UViewModel() {}
 	virtual ~UViewModel() override = default;
 	
-	virtual void Initialize(AActor* OwnerActor) {}
-	virtual void Destroy(AActor* OwnerActor) {}
+	virtual void Initialize(AActor* Actor);
+	virtual void Destroy(AActor* Actor) {}
 	virtual void Update(float DeltaSeconds) {}
 
 	auto ProcessChanges() -> void;
@@ -37,11 +37,15 @@ protected:
 	void QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const FName& PropertyChange);
 	void QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const TArray<FName>& PropertiesChange);
 
+	// The data to work with in the ViewModel might differ from the View until updated
 	UPROPERTY()
 	UViewModelObject* ViewModelObject;
 
+	// Copy used by the view 
 	UPROPERTY()
 	UViewModelObject* View_ViewModelObject;
+
+	AActor* OwnerActor = nullptr;
 	
 private:
 	TMap<FName, TArray<FViewModelPropertyChanged>> RegisteredPropertyMulticast;

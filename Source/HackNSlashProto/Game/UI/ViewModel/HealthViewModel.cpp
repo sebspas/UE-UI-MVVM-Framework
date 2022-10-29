@@ -6,9 +6,11 @@
 
 auto
 	UHealthViewModel::
-	Initialize(AActor* OwnerActor)
+	Initialize(AActor* Actor)
 -> void
 {
+	Super::Initialize(Actor);
+	
 	ViewModelObject = NewObject<UHealthViewModelObject>();
 	View_ViewModelObject = NewObject<UHealthViewModelObject>();
 
@@ -24,7 +26,7 @@ auto
 	OnHealthChanged(0.f, healthComponent->Current, healthComponent->MaxHealth);
 }
 
-void UHealthViewModel::Destroy(AActor* OwnerActor)
+void UHealthViewModel::Destroy(AActor* Actor)
 {
 	auto healthComponent = Cast<UHealth>(OwnerActor->GetComponentByClass(UHealth::StaticClass()));
 	if(!healthComponent)
@@ -34,6 +36,8 @@ void UHealthViewModel::Destroy(AActor* OwnerActor)
 	}
 	
 	healthComponent->HealthChanged.RemoveDynamic(this, &UHealthViewModel::OnHealthChanged);
+
+	Super::Destroy(Actor);
 }
 
 auto
