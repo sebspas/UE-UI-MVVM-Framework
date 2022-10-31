@@ -79,7 +79,7 @@ void UBasicAbility::Execute()
 		player->GetMesh()->SetAnimationMode(EAnimationMode::AnimationSingleNode);
 		player->GetMesh()->PlayAnimation(Animation, false);
 
-		AnimationLength = Animation->GetNumberOfFrames() / Animation->GetFrameRate();
+		AnimationLength = Animation->GetNumberOfSampledKeys() / Animation->GetFrameRate();
 	}
 
 	RemainingCooldown = Cooldown;

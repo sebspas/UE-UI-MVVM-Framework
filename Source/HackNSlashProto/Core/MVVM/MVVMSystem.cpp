@@ -1,5 +1,7 @@
 ﻿#include "MVVMSystem.h"
 
+#include <imgui.h>
+
 #include "../System/ErrorDefine.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -25,6 +27,12 @@ void UMvvmSystem::Deinitialize()
 
 void UMvvmSystem::Update(float DeltaSeconds)
 {
+#if WITH_IMGUI
+	ImGui::Begin("Test window");
+	ImGui::Text("lol");
+	ImGui::End();
+#endif
+	
 	// Update the ViewModel that are registered here
 	// This can be run in a thread so the Update only update the ViewModelObject in the ViewModel not the View
 	[this, DeltaSeconds]()
