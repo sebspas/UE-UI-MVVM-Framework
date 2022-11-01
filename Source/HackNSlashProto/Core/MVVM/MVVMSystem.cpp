@@ -81,19 +81,21 @@ void UMvvmSystem::Update(float DeltaSeconds)
 		auto FoundGuiWindow = ImGuiWindowsOpened.Find(ViewModelAndActorKey);
 		if(FoundGuiWindow != nullptr && *FoundGuiWindow)
 		{
-			ImGui::Begin("ViewModelObject");
-			ImGui::SetWindowSize(ImVec2(400, 400));
-
 			auto ViewModelValue = ViewModelTuple.Value;
 			auto ViewModelObject = ViewModelValue->GetViewModelObject();
 			auto InternalViewModelObject = ViewModelValue->GetInternalViewModelObject();
+
+			auto string = FString::Printf(TEXT("%hs - %u"), TCHAR_TO_UTF8(*ViewModelObject->GetName()), ViewModelAndActorKey.Key);
+			ImGui::Begin(TCHAR_TO_ANSI(*string));
+			ImGui::SetWindowSize(ImVec2(400, 400));
 
 			for (TFieldIterator<FProperty> PropIt(ViewModelObject->GetClass()); PropIt; ++PropIt)
 			{
 				FProperty* Property = *PropIt;
 				std::string myString2(TCHAR_TO_UTF8(*PropIt->GetName()));
 				ImGui::Text("%s", myString2.c_str());
-				
+
+				ImGui::SameLine();
 				if (PropIt->IsA(FBoolProperty::StaticClass()))
 				{
 					FBoolProperty *BoolProp = CastField<FBoolProperty>(Property);
