@@ -1,6 +1,8 @@
 ﻿#include "MVVMSystem.h"
 
 #include <imgui.h>
+#include <string>
+#include <ThirdParty/ImGuiLibrary/Private/imgui_internal.h>
 
 #include "../System/ErrorDefine.h"
 #include "Kismet/GameplayStatics.h"
@@ -27,12 +29,6 @@ void UMvvmSystem::Deinitialize()
 
 void UMvvmSystem::Update(float DeltaSeconds)
 {
-#if WITH_IMGUI
-	ImGui::Begin("Test window");
-	ImGui::Text("lol");
-	ImGui::End();
-#endif
-	
 	// Update the ViewModel that are registered here
 	// This can be run in a thread so the Update only update the ViewModelObject in the ViewModel not the View
 	[this, DeltaSeconds]()
@@ -53,6 +49,82 @@ void UMvvmSystem::Update(float DeltaSeconds)
 			ViewModelTuple.Value->ProcessChanges();
 		}
 	}();
+
+#if WITH_IMGUI
+	ImGui::Begin("Test window");
+	ImGui::SetWindowSize(ImVec2(500, 600));
+
+	int id = 0;
+	for (auto ViewModelTuple : ViewModelsTypeToViewModels)
+	{
+		auto ViewModelAndActorKey = ViewModelTuple.Key;
+
+		ImGui::PushID(id++);
+		std::string myString(TCHAR_TO_UTF8(*ViewModelAndActorKey.Value->GetName()));
+		ImGui::Text("ActorID: %u \t ViewModelType: %s", ViewModelAndActorKey.Key, myString.c_str());
+		ImGui::SameLine();
+
+		
+		if(ImGui::Button("Open"))
+		{
+			auto FoundGuiWindow = ImGuiWindowsOpened.Find(ViewModelAndActorKey);
+			if(FoundGuiWindow)
+			{
+				ImGuiWindowsOpened[ViewModelAndActorKey] = !(*FoundGuiWindow);
+			}
+			else
+			{
+				ImGuiWindowsOpened.Add(ViewModelAndActorKey, true);	
+			}
+		}
+		
+		auto FoundGuiWindow = ImGuiWindowsOpened.Find(ViewModelAndActorKey);
+		if(FoundGuiWindow != nullptr && *FoundGuiWindow)
+		{
+			ImGui::Begin("ViewModelObject");
+			ImGui::SetWindowSize(ImVec2(400, 400));
+
+			auto ViewModelValue = ViewModelTuple.Value;
+			auto ViewModelObject = ViewModelValue->GetViewModelObject();
+			auto InternalViewModelObject = ViewModelValue->GetInternalViewModelObject();
+
+			for (TFieldIterator<FProperty> PropIt(ViewModelObject->GetClass()); PropIt; ++PropIt)
+			{
+				FProperty* Property = *PropIt;
+				std::string myString2(TCHAR_TO_UTF8(*PropIt->GetName()));
+				ImGui::Text("%s", myString2.c_str());
+				
+				if (PropIt->IsA(FBoolProperty::StaticClass()))
+				{
+					FBoolProperty *BoolProp = CastField<FBoolProperty>(Property);
+					bool CurValue = BoolProp->GetPropertyValue_InContainer(ViewModelObject);
+					ImGui::Checkbox("", &CurValue);
+					BoolProp->SetPropertyValue_InContainer(ViewModelObject, CurValue);
+					BoolProp->SetPropertyValue_InContainer(InternalViewModelObject, CurValue);
+				}
+				else if (PropIt->IsA(FFloatProperty::StaticClass()))
+				{
+					FFloatProperty *NumericProp = CastField<FFloatProperty>(Property);
+					float CurValue = NumericProp->GetPropertyValue_InContainer(ViewModelObject);
+					ImGui::DragFloat("", &CurValue);
+					NumericProp->SetPropertyValue_InContainer(ViewModelObject, CurValue);
+					NumericProp->SetPropertyValue_InContainer(InternalViewModelObject, CurValue);
+				}
+				else if (PropIt->IsA(FStructProperty::StaticClass()))
+				{
+					FStructProperty *StructProp = CastField<FStructProperty>(Property);
+					std::string myString3(TCHAR_TO_UTF8(*Property->GetName()));
+					ImGui::Text("Unsuported Type %s", myString3.c_str());
+				}
+			}
+			
+			ImGui::End();
+		}
+		ImGui::PopID();
+	}
+	
+	ImGui::End();
+#endif
 }
 
 auto

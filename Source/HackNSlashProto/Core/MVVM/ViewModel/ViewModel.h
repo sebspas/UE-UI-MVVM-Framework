@@ -33,6 +33,12 @@ public:
 	UFUNCTION(BlueprintCallable)
 	UViewModelObject* GetViewModelObject() const { return View_ViewModelObject; }
 
+	/**
+	 * @brief To Use only for debug, the only ViewModelObject that should be edited is the one of the view
+	 * @return UViewModelObject* ViewModelObject
+	 */
+	UViewModelObject* GetInternalViewModelObject() const { return ViewModelObject; }
+
 protected:
 	void QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const FName& PropertyChange);
 	void QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const TArray<FName>& PropertiesChange);

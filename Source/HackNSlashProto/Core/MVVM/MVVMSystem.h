@@ -31,4 +31,9 @@ private:
 	
 	TMap<ViewModelAndActorKey, UViewModel*> ViewModelsTypeToViewModels;
 	TMap<ViewModelAndActorKey, TArray<UView*>> ViewModelsToViews;
+
+#if WITH_IMGUI
+	TMap<ViewModelAndActorKey, bool> ImGuiWindowsOpened;
+#endif
+	
 };
