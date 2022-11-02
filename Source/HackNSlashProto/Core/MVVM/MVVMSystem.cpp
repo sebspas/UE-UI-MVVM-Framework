@@ -5,9 +5,15 @@
 #include <ThirdParty/ImGuiLibrary/Private/imgui_internal.h>
 
 #include "../System/ErrorDefine.h"
+#include "HackNSlashProto/Core/System/ImGuiHelpers.h"
 #include "Kismet/GameplayStatics.h"
 
 DEFINE_LOG_CATEGORY(LogUIMVVM);
+
+UMvvmSystem::UMvvmSystem()
+{
+	Name = "MVVMSystem";
+}
 
 void UMvvmSystem::Deinitialize()
 {
@@ -50,25 +56,31 @@ void UMvvmSystem::Update(float DeltaSeconds)
 		}
 	}();
 
-#if WITH_IMGUI
-	ImGui::Begin("Test window");
-	ImGui::SetWindowSize(ImVec2(500, 600));
 
+}
+
+#if WITH_IMGUI
+void UMvvmSystem::UpdateImGuiSystemWindow(bool& IsWindowOpen)
+{
+	if(!IsWindowOpen)
+	{
+		return;
+	}
+	
+	ImGui::SetNextWindowSize(ImVec2(500, 600));
+	ImGui::Begin("MVVM System", &IsWindowOpen);
 	int id = 0;
-	for (auto ViewModelTuple : ViewModelsTypeToViewModels)
+	for (const auto ViewModelTuple : ViewModelsTypeToViewModels)
 	{
 		auto ViewModelAndActorKey = ViewModelTuple.Key;
 
 		ImGui::PushID(id++);
-		std::string myString(TCHAR_TO_UTF8(*ViewModelAndActorKey.Value->GetName()));
-		ImGui::Text("ActorID: %u \t ViewModelType: %s", ViewModelAndActorKey.Key, myString.c_str());
+		ImGui::Text("ActorID: %u \t ViewModelType: %s", ViewModelAndActorKey.Key, ImGui::ToConstCharPtr(ViewModelAndActorKey.Value->GetName()));
 		ImGui::SameLine();
-
 		
 		if(ImGui::Button("Open"))
 		{
-			auto FoundGuiWindow = ImGuiWindowsOpened.Find(ViewModelAndActorKey);
-			if(FoundGuiWindow)
+			if(const auto FoundGuiWindow = ImGuiWindowsOpened.Find(ViewModelAndActorKey))
 			{
 				ImGuiWindowsOpened[ViewModelAndActorKey] = !(*FoundGuiWindow);
 			}
@@ -77,57 +89,87 @@ void UMvvmSystem::Update(float DeltaSeconds)
 				ImGuiWindowsOpened.Add(ViewModelAndActorKey, true);	
 			}
 		}
-		
-		auto FoundGuiWindow = ImGuiWindowsOpened.Find(ViewModelAndActorKey);
+
+		const auto FoundGuiWindow = ImGuiWindowsOpened.Find(ViewModelAndActorKey);
 		if(FoundGuiWindow != nullptr && *FoundGuiWindow)
 		{
-			auto ViewModelValue = ViewModelTuple.Value;
-			auto ViewModelObject = ViewModelValue->GetViewModelObject();
-			auto InternalViewModelObject = ViewModelValue->GetInternalViewModelObject();
+			const auto ViewModelValue = ViewModelTuple.Value;
+			const auto ViewModelObject = ViewModelValue->GetViewModelObject();
+			const auto InternalViewModelObject = ViewModelValue->GetInternalViewModelObject();
 
-			auto string = FString::Printf(TEXT("%hs - %u"), TCHAR_TO_UTF8(*ViewModelObject->GetName()), ViewModelAndActorKey.Key);
-			ImGui::Begin(TCHAR_TO_ANSI(*string));
+			auto string = FString::Printf(TEXT("%s - %u"), *ViewModelObject->GetName(), ViewModelAndActorKey.Key);
+			ImGui::Begin(ImGui::ToConstCharPtr(string), FoundGuiWindow);
 			ImGui::SetWindowSize(ImVec2(400, 400));
 
+			int Prop_Imgui_Id = 0;
 			for (TFieldIterator<FProperty> PropIt(ViewModelObject->GetClass()); PropIt; ++PropIt)
 			{
 				FProperty* Property = *PropIt;
-				std::string myString2(TCHAR_TO_UTF8(*PropIt->GetName()));
-				ImGui::Text("%s", myString2.c_str());
-
+				auto PropertyName = FName(Property->GetName());
+				ImGui::Text("%s", ImGui::ToConstCharPtr(PropIt->GetName()));
 				ImGui::SameLine();
+				
 				if (PropIt->IsA(FBoolProperty::StaticClass()))
 				{
-					FBoolProperty *BoolProp = CastField<FBoolProperty>(Property);
+					const FBoolProperty *BoolProp = CastField<FBoolProperty>(Property);
 					bool CurValue = BoolProp->GetPropertyValue_InContainer(ViewModelObject);
-					ImGui::Checkbox("", &CurValue);
-					BoolProp->SetPropertyValue_InContainer(ViewModelObject, CurValue);
-					BoolProp->SetPropertyValue_InContainer(InternalViewModelObject, CurValue);
+					ImGui::PushID(Prop_Imgui_Id++);
+					if(ImGui::Checkbox(ImGui::ToConstCharPtr(PropertyName), &CurValue))
+					{
+						ViewModelValue->QueueVMObjectChange([NewValue = CurValue, PropertyName](UViewModelObject* ViewModelModelObject)
+						{
+							auto* Prop = CastField<FBoolProperty>(ViewModelModelObject->GetClass()->FindPropertyByName(PropertyName));
+							Prop->SetPropertyValue_InContainer(ViewModelModelObject, NewValue);
+						}, PropertyName);
+					}
+					ImGui::PopID();
 				}
 				else if (PropIt->IsA(FFloatProperty::StaticClass()))
 				{
-					FFloatProperty *NumericProp = CastField<FFloatProperty>(Property);
+					const FFloatProperty *NumericProp = CastField<FFloatProperty>(Property);
 					float CurValue = NumericProp->GetPropertyValue_InContainer(ViewModelObject);
-					ImGui::DragFloat("", &CurValue);
-					NumericProp->SetPropertyValue_InContainer(ViewModelObject, CurValue);
-					NumericProp->SetPropertyValue_InContainer(InternalViewModelObject, CurValue);
+					ImGui::PushID(Prop_Imgui_Id++);
+					if(ImGui::DragFloat(ImGui::ToConstCharPtr(PropertyName), &CurValue))
+					{
+						ViewModelValue->QueueVMObjectChange([NewValue = CurValue, PropertyName](UViewModelObject* ViewModelModelObject)
+						{
+							auto* Prop = CastField<FFloatProperty>(ViewModelModelObject->GetClass()->FindPropertyByName(PropertyName));
+							Prop->SetPropertyValue_InContainer(ViewModelModelObject, NewValue);
+						}, PropertyName);
+					}
+					ImGui::PopID();
 				}
-				else if (PropIt->IsA(FStructProperty::StaticClass()))
+				else
 				{
-					FStructProperty *StructProp = CastField<FStructProperty>(Property);
-					std::string myString3(TCHAR_TO_UTF8(*Property->GetName()));
-					ImGui::Text("Unsuported Type %s", myString3.c_str());
+					if(Property->GetCPPType() == "FVector2D")
+					{
+						const FVector2D* Vector2D = Property->ContainerPtrToValuePtr<FVector2D>(ViewModelObject);
+						float Test[2] = {static_cast<float>(Vector2D->X), static_cast<float>(Vector2D->Y)};
+						
+						ImGui::PushID(Prop_Imgui_Id++);
+						if(ImGui::InputFloat2(ImGui::ToConstCharPtr(PropertyName), Test))
+						{
+							ViewModelValue->QueueVMObjectChange([NewValue = Test, PropertyName](UViewModelObject* ViewModelModelObject)
+							{
+								auto* Prop = CastField<FProperty>(ViewModelModelObject->GetClass()->FindPropertyByName(PropertyName));
+								FVector2D* Vector2D = Prop->ContainerPtrToValuePtr<FVector2D>(ViewModelModelObject);
+								Vector2D->Set(NewValue[0], NewValue[1]);
+							}, PropertyName);
+						}
+					}
+					else
+					{
+						ImGui::Text("Unsuported Type %s", TCHAR_TO_ANSI(*Property->GetCPPType()));
+					}
 				}
 			}
-			
 			ImGui::End();
 		}
 		ImGui::PopID();
 	}
-	
 	ImGui::End();
-#endif
 }
+#endif
 
 auto
 	UMvvmSystem::

@@ -38,11 +38,11 @@ public:
 	 * @return UViewModelObject* ViewModelObject
 	 */
 	UViewModelObject* GetInternalViewModelObject() const { return ViewModelObject; }
-
-protected:
+	
 	void QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const FName& PropertyChange);
 	void QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const TArray<FName>& PropertiesChange);
-
+	
+protected:
 	// The data to work with in the ViewModel might differ from the View until updated
 	UPROPERTY()
 	UViewModelObject* ViewModelObject;

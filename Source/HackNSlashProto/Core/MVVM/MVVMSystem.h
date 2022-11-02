@@ -14,12 +14,16 @@ class UMvvmSystem final : public UGameInstanceSubsystem, public IUpdatableSubSys
 public:
 	GENERATED_BODY()
 
-	UMvvmSystem() {}
+	UMvvmSystem();
 	virtual ~UMvvmSystem() override = default;
 
 	virtual void Deinitialize() override;
 	
 	virtual void Update(float DeltaSeconds) override;
+
+#if WITH_IMGUI
+	virtual void UpdateImGuiSystemWindow(bool& IsWindowOpen) override;
+#endif
 
 	static UMvvmSystem* GetUMvvmSystem(UObject* Object);
 

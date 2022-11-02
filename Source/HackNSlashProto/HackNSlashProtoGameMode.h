@@ -20,8 +20,16 @@ public:
 
 	virtual void Tick(float DeltaSeconds) override;
 
+#if WITH_IMGUI
+	auto ImGuiTick() -> void;
+#endif
+
 private:
 	TArray<IUpdatableSubSystem*> Systems;
+
+#if WITH_IMGUI
+	TMap<FName, bool> ImGuiWindowsOpened;
+#endif
 };
 
 
