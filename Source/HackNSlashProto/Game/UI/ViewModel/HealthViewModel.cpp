@@ -26,7 +26,7 @@ auto
 	OnHealthChanged(0.f, healthComponent->Current, healthComponent->MaxHealth);
 }
 
-void UHealthViewModel::Destroy(AActor* Actor)
+void UHealthViewModel::OnDestroy(AActor* Actor)
 {
 	auto healthComponent = Cast<UHealth>(OwnerActor->GetComponentByClass(UHealth::StaticClass()));
 	if(!healthComponent)
@@ -36,18 +36,12 @@ void UHealthViewModel::Destroy(AActor* Actor)
 	}
 	
 	healthComponent->HealthChanged.RemoveDynamic(this, &UHealthViewModel::OnHealthChanged);
-
-	Super::Destroy(Actor);
 }
 
 auto
 	UHealthViewModel::OnHealthChanged(float Delta, float Current, float Max)
 	-> void
 {
-	QueueVMObjectChange([Current, Max](UViewModelObject* ViewModelModelObject)
-	{
-		auto healthViewModelObject = dynamic_cast<UHealthViewModelObject*>(ViewModelModelObject);
-		healthViewModelObject->Current = Current;
-		healthViewModelObject->MaxHealth = Max;
-	}, {FName("Current"), FName("Max")});
+	Set_Current(Current);
+	Set_MaxHealth(Max);
 }

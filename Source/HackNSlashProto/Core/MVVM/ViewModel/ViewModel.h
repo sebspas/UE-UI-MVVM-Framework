@@ -6,6 +6,26 @@
 
 #include "ViewModel.generated.h"
 
+#define GENERATE_UI_SETTERS(VMType, MemberType, VarName) \
+	void Set_##VarName(const MemberType& NewValue) \
+	{ \
+		QueueVMObjectChange([NewValue](UViewModelObject* ViewModelModelObject) \
+		{ \
+			auto VMO = dynamic_cast<VMType*>(ViewModelModelObject); \
+			VMO->##VarName = NewValue; \
+		}, {FName(#VarName)}); \
+	}
+
+#define GENERATE_UI_SETTERS_ARRAY_ELEMENT(VMType, MemberType, VarName) \
+	void Set_##VarName(uint8 Index, const MemberType& NewValue) \
+	{ \
+		QueueVMObjectChange([NewValue, Index](UViewModelObject* ViewModelModelObject) \
+		{ \
+			auto VMO = dynamic_cast<VMType*>(ViewModelModelObject); \
+			VMO->##VarName[Index] = NewValue; \
+		}, {FName(#VarName)}); \
+	}
+
 DECLARE_DYNAMIC_DELEGATE(FViewModelPropertyChanged);
 
 UCLASS(BlueprintType, Abstract)
@@ -17,7 +37,8 @@ public:
 	virtual ~UViewModel() override = default;
 	
 	virtual void Initialize(AActor* Actor);
-	virtual void Destroy(AActor* Actor) {}
+	void Destroy(AActor* Actor);
+	
 	virtual void Update(float DeltaSeconds) {}
 
 	auto ProcessChanges() -> void;
@@ -43,6 +64,8 @@ public:
 	void QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const TArray<FName>& PropertiesChange);
 	
 protected:
+	virtual void OnDestroy(AActor* Actor) {}
+	
 	// The data to work with in the ViewModel might differ from the View until updated
 	UPROPERTY()
 	UViewModelObject* ViewModelObject;

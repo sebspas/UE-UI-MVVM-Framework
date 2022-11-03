@@ -73,6 +73,11 @@ void UViewModel::Initialize(AActor* Actor)
 	OwnerActor = Actor;
 }
 
+void UViewModel::Destroy(AActor* Actor)
+{
+	OnDestroy(Actor);
+}
+
 auto
 	UViewModel::
 	ProcessChanges()

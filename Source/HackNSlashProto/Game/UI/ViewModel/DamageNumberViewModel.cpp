@@ -25,14 +25,12 @@ auto
 
 	HealthComponent->HealthChanged.AddUniqueDynamic(this, &UDamageNumberViewModel::OnHealthChanged);
 
-	QueueVMObjectChange([](UViewModelObject* ViewModelModelObject)
-	{
-		const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelModelObject);
-		DamageNumberViewModelObject->DamageNumbers.Init(FDamageNumber(),5);
-	}, {FName("DamageNumbers")});
+	TArray<FDamageNumber> NewDamageNumbers;
+	NewDamageNumbers.Init(FDamageNumber(), 5);
+	Set_DamageNumbers(NewDamageNumbers);
 }
 
-void UDamageNumberViewModel::Destroy(AActor* Actor)
+void UDamageNumberViewModel::OnDestroy(AActor* Actor)
 {
 	const auto healthComponent = Cast<UHealth>(OwnerActor->GetComponentByClass(UHealth::StaticClass()));
 	if(!healthComponent)
@@ -42,9 +40,6 @@ void UDamageNumberViewModel::Destroy(AActor* Actor)
 	}
 	
 	healthComponent->HealthChanged.RemoveDynamic(this, &UDamageNumberViewModel::OnHealthChanged);
-
-	//TODO: Protect this call with a dummy pattern so the user don't forget them
-	Super::Destroy(Actor);
 }
 
 auto
@@ -63,12 +58,7 @@ auto
 
 		if(DamageNumberViewModelObject->IsVisibleOnScreen != IsVisible)
 		{
-			QueueVMObjectChange([IsVisible](UViewModelObject* ViewModelModelObject)
-			{
-				const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelModelObject);
-				DamageNumberViewModelObject->IsVisibleOnScreen = IsVisible;
-						
-			}, {FName("IsVisibleOnScreen")});
+			Set_IsVisibleOnScreen(IsVisible);
 		}
 	}
 
@@ -84,26 +74,17 @@ auto
 
 			if(DamageNumber.LifeSpan <= 0)
 			{
-				QueueVMObjectChange([i](UViewModelObject* ViewModelModelObject)
-				{
-					const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelModelObject);
-					DamageNumberViewModelObject->DamageNumbers[i].IsActive = false;
-					DamageNumberViewModelObject->DamageNumbers[i].LifeSpan = 0.f; 
-					
-				}, {FName("IsActive")});
+				DamageNumber.IsActive = false;
+				DamageNumber.LifeSpan = 0.f;
+				Set_DamageNumbers(i, DamageNumber);
 			}
 		}
 	}
 
 	if(HasAnyActiveMarker)
 	{
-		QueueVMObjectChange([DeltaSeconds, ScreenActorLocation](UViewModelObject* ViewModelModelObject)
-		{
-			const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelModelObject);
-			DamageNumberViewModelObject->ActorScreenLocation = ScreenActorLocation;
-			DamageNumberViewModelObject->DeltaTime = DeltaSeconds;
-						
-		}, {FName("ActorScreenLocation")});
+		Set_ActorScreenLocation(ScreenActorLocation);
+		Set_DeltaTime(DeltaSeconds);
 	}
 }
 
@@ -111,29 +92,28 @@ auto
 	UDamageNumberViewModel::OnHealthChanged(float Delta, float Current, float Max)
 	-> void
 {
-	QueueVMObjectChange([Delta](UViewModelObject* ViewModelModelObject)
+	const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelObject);
+
+	uint8 SelectedIndex = 0;
+	for (int i = 0; i < DamageNumberViewModelObject->DamageNumbers.Num(); ++i)
 	{
-		const auto DamageNumberViewModelObject = dynamic_cast<UDamageNumberViewModelObject*>(ViewModelModelObject);
-
-		uint8 SelectedIndex = 0;
-		for (int i = 0; i < DamageNumberViewModelObject->DamageNumbers.Num(); ++i)
+		if(!DamageNumberViewModelObject->DamageNumbers[i].IsActive)
 		{
-			if(!DamageNumberViewModelObject->DamageNumbers[i].IsActive)
-			{
-				SelectedIndex = i;
-				break;
-			}
-
-			// Find next available slot that is going to end soon
-			if(DamageNumberViewModelObject->DamageNumbers[SelectedIndex].LifeSpan > DamageNumberViewModelObject->DamageNumbers[i].LifeSpan)
-			{
-				SelectedIndex = i;
-			}
+			SelectedIndex = i;
+			break;
 		}
+
+		// Find next available slot that is going to end soon
+		if(DamageNumberViewModelObject->DamageNumbers[SelectedIndex].LifeSpan > DamageNumberViewModelObject->DamageNumbers[i].LifeSpan)
+		{
+			SelectedIndex = i;
+		}
+	}
 		
-		FDamageNumber& SelectedDamageNumber = DamageNumberViewModelObject->DamageNumbers[SelectedIndex];
-		SelectedDamageNumber.Value = Delta;
-		SelectedDamageNumber.LifeSpan = 0.5f; // Could be data driven in the view
-		SelectedDamageNumber.IsActive = true;
-	}, {FName("DamageNumbers")});
+	FDamageNumber& SelectedDamageNumber = DamageNumberViewModelObject->DamageNumbers[SelectedIndex];
+	SelectedDamageNumber.Value = Delta;
+	SelectedDamageNumber.LifeSpan = 0.5f; // Could be data driven in the view
+	SelectedDamageNumber.IsActive = true;
+
+	Set_DamageNumbers(SelectedIndex, SelectedDamageNumber);
 }
