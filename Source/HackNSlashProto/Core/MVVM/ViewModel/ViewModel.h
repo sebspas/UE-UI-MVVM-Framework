@@ -74,16 +74,17 @@ protected:
 	UPROPERTY()
 	UViewModelObject* View_ViewModelObject;
 
+	UPROPERTY()
 	AActor* OwnerActor = nullptr;
 	
 private:
 	TMap<FName, TArray<FViewModelPropertyChanged>> RegisteredPropertyMulticast;
 
-	struct SPropertiesChange
+	struct FPropertiesChange
 	{
 		TArray<FName> PropertiesChanged;
 		std::function<void(UViewModelObject*)> ChangeLambda;
 	};
 	
-	TQueue<SPropertiesChange> ViewModelToViewQueue;
+	TQueue<FPropertiesChange> ViewModelToViewQueue;
 };

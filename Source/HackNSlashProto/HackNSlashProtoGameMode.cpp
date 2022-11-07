@@ -34,13 +34,13 @@ void AHackNSlashProtoGameMode::InitGame(const FString& MapName, const FString& O
 #endif
 }
 
-void AHackNSlashProtoGameMode::Tick(float DeltaSeconds)
+void AHackNSlashProtoGameMode::Tick(const float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
-	for (auto system : Systems)
+	for (const auto System : Systems)
 	{
-		system->Update(DeltaSeconds);
+		System->Update(DeltaSeconds);
 
 #if WITH_IMGUI
 		ImGuiTick();
@@ -58,16 +58,16 @@ auto
 
 	if(ImGui::BeginMenu("Systems"))
 	{
-		for (auto system : Systems)
+		for (const auto System : Systems)
 		{
-			ImGui::MenuItem(ImGui::ToConstCharPtr(system->GetSystemName()), nullptr, &ImGuiWindowsOpened[system->GetSystemName()]);
+			ImGui::MenuItem(ImGui::ToConstCharPtr(System->GetSystemName()), nullptr, &ImGuiWindowsOpened[System->GetSystemName()]);
 		}
 		ImGui::EndMenu();
 	}
 	
-	for (auto system : Systems)
+	for (const auto System : Systems)
 	{
-		system->UpdateImGuiSystemWindow(ImGuiWindowsOpened[system->GetSystemName()]);
+		System->UpdateImGuiSystemWindow(ImGuiWindowsOpened[System->GetSystemName()]);
 	}
 	
 	ImGui::EndMainMenuBar();

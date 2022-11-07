@@ -25,7 +25,7 @@ public:
 	virtual void UpdateImGuiSystemWindow(bool& IsWindowOpen) override;
 #endif
 
-	static UMvvmSystem* GetUMvvmSystem(UObject* Object);
+	static UMvvmSystem* GetUMvvmSystem(const UObject* Object);
 
 	auto RegisterView(UView* View) -> void;
 	auto UnRegisterView(UView* View) -> void;

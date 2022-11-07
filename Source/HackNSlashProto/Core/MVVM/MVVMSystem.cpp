@@ -15,7 +15,10 @@ UMvvmSystem::UMvvmSystem()
 	Name = "MVVMSystem";
 }
 
-void UMvvmSystem::Deinitialize()
+auto
+	UMvvmSystem::
+	Deinitialize()
+	-> void
 {
 	TSet<UView*> ViewsToUnregister;
 	
@@ -55,8 +58,6 @@ void UMvvmSystem::Update(float DeltaSeconds)
 			ViewModelTuple.Value->ProcessChanges();
 		}
 	}();
-
-
 }
 
 #if WITH_IMGUI
@@ -69,12 +70,12 @@ void UMvvmSystem::UpdateImGuiSystemWindow(bool& IsWindowOpen)
 	
 	ImGui::SetNextWindowSize(ImVec2(500, 600));
 	ImGui::Begin("MVVM System", &IsWindowOpen);
-	int id = 0;
+	int ID = 0;
 	for (const auto ViewModelTuple : ViewModelsTypeToViewModels)
 	{
 		auto ViewModelAndActorKey = ViewModelTuple.Key;
 
-		ImGui::PushID(id++);
+		ImGui::PushID(ID++);
 		ImGui::Text("ActorID: %u \t ViewModelType: %s", ViewModelAndActorKey.Key, ImGui::ToConstCharPtr(ViewModelAndActorKey.Value->GetName()));
 		ImGui::SameLine();
 		
@@ -173,7 +174,7 @@ void UMvvmSystem::UpdateImGuiSystemWindow(bool& IsWindowOpen)
 
 auto
 	UMvvmSystem::
-	GetUMvvmSystem(UObject* Object)
+	GetUMvvmSystem(const UObject* Object)
 	-> UMvvmSystem*
 {
 	const auto GameInstance = UGameplayStatics::GetGameInstance(Object);
@@ -199,8 +200,7 @@ auto
 		auto ViewModelType = ViewModelsRegistered.ViewModelType;
 		auto ViewModelActorInfos = ViewModelAndActorKey{OwnerActor->GetUniqueID(), ViewModelType};
 
-		const auto ViewModel = ViewModelsTypeToViewModels.Find(ViewModelActorInfos);
-		if(ViewModel)
+		if(const auto ViewModel = ViewModelsTypeToViewModels.Find(ViewModelActorInfos))
 		{
 			// ViewModel exist simply check the view and update the pointer in it for this viewModel
 			const auto viewList = ViewModelsToViews.Find(ViewModelActorInfos);
@@ -217,12 +217,12 @@ auto
 		else
 		{
 			// No ViewModel exist yet for this type, create a new viewModel add it and then create the ViewList
-			auto newViewModel = NewObject<UViewModel>(this, ViewModelType);
+			auto NewViewModel = NewObject<UViewModel>(this, ViewModelType);
 
-			newViewModel->Initialize(OwnerActor);
+			NewViewModel->Initialize(OwnerActor);
 
-			ViewModelsRegistered.ViewModel = newViewModel;
-			ViewModelsTypeToViewModels.Add(ViewModelActorInfos, newViewModel);
+			ViewModelsRegistered.ViewModel = NewViewModel;
+			ViewModelsTypeToViewModels.Add(ViewModelActorInfos, NewViewModel);
 
 			auto newViewList = TArray<UView*>();
 			newViewList.Add(View);
@@ -240,15 +240,13 @@ auto
 	const auto OwnerActor = View->GetOwningActor();
 	ensureMsgf(OwnerActor, TEXT("Owner Actor is empty when unregistering view %s"), *View->GetName());
 	
-	for (const auto ViewModelsRegistered : View->GetViewModelsRegistered())
+	for (const auto [ViewModel, ViewModelType] : View->GetViewModelsRegistered())
 	{
-		auto ViewModelType = ViewModelsRegistered.ViewModelType;
 		auto ViewModelActorInfos = ViewModelAndActorKey{OwnerActor->GetUniqueID(), ViewModelType};
 
-		const auto ViewModel = ViewModelsTypeToViewModels.Find(ViewModelActorInfos);
-		if(ViewModel)
+		if(const auto ViewModelPtr = ViewModelsTypeToViewModels.Find(ViewModelActorInfos))
 		{
-			(*ViewModel)->Destroy(OwnerActor);
+			(*ViewModelPtr)->Destroy(OwnerActor);
 			
 			const auto viewList = ViewModelsToViews.Find(ViewModelActorInfos);
 			if(!viewList)

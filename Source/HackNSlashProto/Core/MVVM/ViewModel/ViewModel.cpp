@@ -8,8 +8,7 @@ auto
 	RegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChangedDelegate)
 -> void
 {
-	const auto PropertyChangeListener = RegisteredPropertyMulticast.Find(PropertyName);
-	if(PropertyChangeListener)
+	if(const auto PropertyChangeListener = RegisteredPropertyMulticast.Find(PropertyName))
 	{
 		PropertyChangeListener->Add(PropertyChangedDelegate);
 	}
@@ -25,8 +24,7 @@ auto
 	UnRegisterOnPropertyChanged(FName PropertyName, const FViewModelPropertyChanged& PropertyChangedDelegate)
 -> void
 {
-	const auto ValueFound = RegisteredPropertyMulticast.Find(PropertyName);
-	if(ValueFound)
+	if(const auto ValueFound = RegisteredPropertyMulticast.Find(PropertyName))
 	{
 		ValueFound->Remove(PropertyChangedDelegate);
 	}
@@ -41,8 +39,7 @@ auto
 	OnPropertyChangedEvent(const FName& PropertyName)
 	-> void
 {
-	const auto DelegateArrayPtr = RegisteredPropertyMulticast.Find(PropertyName);
-	if(DelegateArrayPtr)
+	if(const auto DelegateArrayPtr = RegisteredPropertyMulticast.Find(PropertyName))
 	{
 		auto DelegateArray = *DelegateArrayPtr;
 		for (auto& Delegate : DelegateArray)
@@ -56,7 +53,7 @@ auto
 	UViewModel::QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const FName& PropertyChange)
 	-> void
 {
-	const SPropertiesChange NewPropertyChange = {{PropertyChange}, LambdaChange};
+	const FPropertiesChange NewPropertyChange = {{PropertyChange}, LambdaChange};
 	ViewModelToViewQueue.Enqueue(NewPropertyChange);
 }
 
@@ -64,7 +61,7 @@ auto
 	UViewModel::QueueVMObjectChange(std::function<void(UViewModelObject*)> LambdaChange, const TArray<FName>& PropertiesChanged)
 	-> void
 {
-	const SPropertiesChange NewPropertiesChanges = {PropertiesChanged, LambdaChange};
+	const FPropertiesChange NewPropertiesChanges = {PropertiesChanged, LambdaChange};
 	ViewModelToViewQueue.Enqueue(NewPropertiesChanges);
 }
 
@@ -85,7 +82,7 @@ auto
 {
 	while (!ViewModelToViewQueue.IsEmpty())
 	{
-		const SPropertiesChange* QueuedChanged = ViewModelToViewQueue.Peek();
+		const FPropertiesChange* QueuedChanged = ViewModelToViewQueue.Peek();
 		
 		// Update both ViewModelObject to the new Value
 		QueuedChanged->ChangeLambda(ViewModelObject);
