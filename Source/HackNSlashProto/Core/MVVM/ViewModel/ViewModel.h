@@ -17,7 +17,7 @@
 	}
 
 #define GENERATE_UI_SETTERS_ARRAY_ELEMENT(VMType, MemberType, VarName) \
-	void Set_##VarName(uint8 Index, const MemberType& NewValue) \
+	void Set_##VarName(uint8 Index, MemberType NewValue) \
 	{ \
 		QueueVMObjectChange([NewValue, Index](UViewModelObject* ViewModelModelObject) \
 		{ \
@@ -76,10 +76,10 @@ protected:
 
 	UPROPERTY()
 	AActor* OwnerActor = nullptr;
+
+	TMap<FName, TArray<FViewModelPropertyChanged>> RegisteredPropertyMulticast;
 	
 private:
-	TMap<FName, TArray<FViewModelPropertyChanged>> RegisteredPropertyMulticast;
-
 	struct FPropertiesChange
 	{
 		TArray<FName> PropertiesChanged;

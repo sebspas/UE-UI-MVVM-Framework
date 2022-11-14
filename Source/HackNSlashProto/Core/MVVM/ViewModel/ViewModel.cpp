@@ -82,16 +82,17 @@ auto
 {
 	while (!ViewModelToViewQueue.IsEmpty())
 	{
-		const FPropertiesChange* QueuedChanged = ViewModelToViewQueue.Peek();
+		FPropertiesChange QueuedChange;
+		ViewModelToViewQueue.Dequeue(QueuedChange);
 		
 		// Update both ViewModelObject to the new Value
-		QueuedChanged->ChangeLambda(ViewModelObject);
-		QueuedChanged->ChangeLambda(View_ViewModelObject);
+		QueuedChange.ChangeLambda(ViewModelObject);
+		QueuedChange.ChangeLambda(View_ViewModelObject);
 
 		// Inform that the property has just changed
-		for (auto propertyName : QueuedChanged->PropertiesChanged)
+		for (auto PropertyName : QueuedChange.PropertiesChanged)
 		{
-			OnPropertyChangedEvent(propertyName);
+			OnPropertyChangedEvent(PropertyName);
 		}
 
 		ViewModelToViewQueue.Pop();

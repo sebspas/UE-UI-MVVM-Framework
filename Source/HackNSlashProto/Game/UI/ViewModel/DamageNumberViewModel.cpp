@@ -67,14 +67,14 @@ auto
 	for (int i = 0; i < DamageNumberViewModelObject->DamageNumbers.Num(); ++i)
 	{
 		auto& DamageNumber = DamageNumberViewModelObject->DamageNumbers[i];
-		if(DamageNumber.IsActive)
+		if(DamageNumber.LifeSpan != 0.f)
 		{
 			HasAnyActiveMarker = true;
 			DamageNumber.LifeSpan-= DeltaSeconds;
+			DamageNumber.IsActivated = false;
 
 			if(DamageNumber.LifeSpan <= 0)
 			{
-				DamageNumber.IsActive = false;
 				DamageNumber.LifeSpan = 0.f;
 				Set_DamageNumbers(i, DamageNumber);
 			}
@@ -97,7 +97,7 @@ auto
 	uint8 SelectedIndex = 0;
 	for (int i = 0; i < DamageNumberViewModelObject->DamageNumbers.Num(); ++i)
 	{
-		if(!DamageNumberViewModelObject->DamageNumbers[i].IsActive)
+		if(DamageNumberViewModelObject->DamageNumbers[i].LifeSpan == 0.f)
 		{
 			SelectedIndex = i;
 			break;
@@ -110,10 +110,10 @@ auto
 		}
 	}
 		
-	FDamageNumber& SelectedDamageNumber = DamageNumberViewModelObject->DamageNumbers[SelectedIndex];
+	FDamageNumber SelectedDamageNumber = DamageNumberViewModelObject->DamageNumbers[SelectedIndex];
 	SelectedDamageNumber.Value = Delta;
-	SelectedDamageNumber.LifeSpan = 0.5f; // Could be data driven in the view
-	SelectedDamageNumber.IsActive = true;
+	SelectedDamageNumber.LifeSpan = 0.7f; // Could be data driven in the view
+	SelectedDamageNumber.IsActivated = true;
 
 	Set_DamageNumbers(SelectedIndex, SelectedDamageNumber);
 }

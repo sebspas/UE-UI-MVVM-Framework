@@ -9,7 +9,7 @@ struct FDamageNumber
 	GENERATED_BODY()
 
 	UPROPERTY(BlueprintReadOnly)
-	bool IsActive = false;
+	bool IsActivated = false;
 	
 	UPROPERTY(BlueprintReadOnly)
 	float Value = 0.f;
