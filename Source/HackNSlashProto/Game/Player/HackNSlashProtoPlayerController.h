@@ -6,6 +6,9 @@
 #include "GameFramework/PlayerController.h"
 #include "HackNSlashProtoPlayerController.generated.h"
 
+class UVMHealth;
+class UVMMana;
+
 UCLASS()
 class AHackNSlashProtoPlayerController : public APlayerController
 {
@@ -15,6 +18,12 @@ public:
 	AHackNSlashProtoPlayerController();
 
 	void RotateTowardCursor();
+
+	UFUNCTION(BlueprintCallable)
+	UVMHealth* GetHealthVM();
+
+	UFUNCTION(BlueprintCallable)
+	UVMMana* GetManaVM();
 
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */

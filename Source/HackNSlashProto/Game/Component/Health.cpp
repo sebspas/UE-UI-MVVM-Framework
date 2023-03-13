@@ -1,39 +1,43 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Health.h"
 
-// Sets default values for this component's properties
+#include "HackNSlashProto/Game/UI/ViewModel/UVMHealth.h"
+
 UHealth::UHealth()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
+	bWantsInitializeComponent = true;
+}
+
+// Sets default values for this component's properties
+void UHealth::InitializeComponent()
+{
+	Super::InitializeComponent();
+
+	HealthViewModel = NewObject<UVMHealth>();
+
+	// Notify the defaults values of Current and MaxHealth
+	HealthViewModel->SetCurrentHealth(Current);
+	HealthViewModel->SetMaxHealth(MaxHealth);
 }
 
 void UHealth::ApplyHealthChange(float Value)
 {
-	const float PreviousHealth = Current;
     Current += Value;
 	
     if(Current <= 0.f)
     {
     	Current = 0.f;
+    	HealthViewModel->SetCurrentHealth(Current);
 		Death.Broadcast();
-    } 
-
-	if(PreviousHealth != Current)
-    {
-    	HealthChanged.Broadcast(Value, Current, MaxHealth);
+    	return;
     }
-}
 
-// Called when the game starts
-void UHealth::BeginPlay()
-{
-	Super::BeginPlay();
-}
+	HealthViewModel->SetCurrentHealth(Current);
+	HealthViewModel->SetMaxHealth(MaxHealth);
 
+	HealthChanged.Broadcast(Value, Current, MaxHealth);
+}
 
 // Called every frame
 void UHealth::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)

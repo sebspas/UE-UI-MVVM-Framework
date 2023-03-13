@@ -1,4 +1,5 @@
 ﻿#pragma once
+
 #include "HackNSlashProto/Core/MVVM/ViewModel/ViewModel.h"
 #include "HackNSlashProto/Game/UI/ViewModelObject/DamageNumberViewModelObject.h"
 

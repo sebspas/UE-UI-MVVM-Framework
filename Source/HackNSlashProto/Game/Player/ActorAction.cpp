@@ -1,8 +1,11 @@
 #include "ActorAction.h"
 
 #include "HackNSlashProtoCharacter.h"
+#include "HackNSlashProto/HackNSlashProto.h"
 #include "HackNSlashProtoPlayerController.h"
+#include "HackNSlashProto/Core/System/ErrorDefine.h"
 #include "HackNSlashProto/Game/Component/Health.h"
+#include "HackNSlashProto/Game/Component/Mana.h"
 #include "HackNSlashProto/Game/Items/Inventory.h"
 #include "HackNSlashProto/Game/Items/Weapon.h"
 
@@ -17,6 +20,11 @@ bool UActorAction::CanExecute()
 	if(AHackNSlashProtoCharacter* player = Cast<AHackNSlashProtoCharacter>(Owner))
 	{
 		CanExecute = CanMove || player->GetVelocity().Size() <= 0.f;
+
+		if(UMana* Mana = Cast<UMana>(player->GetComponentByClass(UMana::StaticClass())))
+		{
+			CanExecute &= Mana->HasEnoughMana(ManaCost);
+		}
 	}
 
 	CanExecute &= !IsInCooldown();
@@ -31,6 +39,11 @@ void UActorAction::Execute()
 		if(AHackNSlashProtoPlayerController* PlayerController = Cast<AHackNSlashProtoPlayerController>(player->GetController()))
 		{
 			PlayerController->RotateTowardCursor();
+		}
+
+		if(UMana* Mana = Cast<UMana>(player->GetComponentByClass(UMana::StaticClass())))
+		{
+			Mana->ApplyManaChange(-ManaCost);
 		}
 	}
 }
@@ -80,6 +93,22 @@ void UBasicAbility::Execute()
 		player->GetMesh()->PlayAnimation(Animation, false);
 
 		AnimationLength = Animation->GetNumberOfSampledKeys() / Animation->GetSamplingFrameRate().AsDecimal();
+
+		FAnimNotifyContext NotifyContext = FAnimNotifyContext();
+		Animation->GetAnimNotifies(0.f, AnimationLength, NotifyContext);
+
+		for(auto NotifyEvent : NotifyContext.ActiveNotifies)
+		{
+			if(NotifyEvent.GetNotify()->GetNotifyEventName() == FName("AnimNotify_Hit"))
+			{
+				HitTime = NotifyEvent.GetNotify()->GetTriggerTime();
+				CORE_LOGM(LogHackNSlashProto, "Notify found at time %f for Anim: %s", *Animation->GetName());
+			}
+		}
+
+		HitCount = 1;
+
+		ensureMsgf(HitTime != 0.f, TEXT("Couldn't find a valid HitTime for Anim %s"), *Animation->GetName());
 	}
 
 	RemainingCooldown = Cooldown;
@@ -91,25 +120,31 @@ void UBasicAbility::Tick(float DeltaSeconds)
 	
 	if(AnimationLength != 0)
 	{
-		AnimationLength -= DeltaSeconds;
+		ElapsedAnimTime += DeltaSeconds;
 		
-		if(AnimationLength < 0.f)
+		if(ElapsedAnimTime >= AnimationLength)
 		{
 			AnimationLength = 0.f;
+			ElapsedAnimTime = 0.f;
 		}
-		else
+
+		if(ElapsedAnimTime >= HitTime && HitCount > 0)
 		{
 			for (auto Actor : Weapon->GetActorsHit())
 			{
+				if(Actor == Owner)
+				{ continue; }
+				
 				if(!ActorDamaged.Contains(Actor))
 				{
-					ApplyAttack(Actor);
 					ActorDamaged.Add(Actor);
+					ApplyAttack(Actor);
 				}
 			}
+			
+			Weapon->GetActorsHit().Reset();
+			HitCount = 0;
 		}
-		
-		Weapon->GetActorsHit().Reset();
 	}
 }
 

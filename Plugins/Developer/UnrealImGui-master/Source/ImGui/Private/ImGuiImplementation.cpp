@@ -7,12 +7,6 @@
 // For convenience and easy access to the ImGui source code, we build it as part of this module.
 // We don't need to define IMGUI_API manually because it is already done for this module.
 
-#if PLATFORM_XBOXONE
-// Disable Win32 functions used in ImGui and not supported on XBox.
-#define IMGUI_DISABLE_WIN32_DEFAULT_CLIPBOARD_FUNCTIONS
-#define IMGUI_DISABLE_WIN32_DEFAULT_IME_FUNCTIONS
-#endif // PLATFORM_XBOXONE
-
 #if PLATFORM_WINDOWS
 #include <Windows/AllowWindowsPlatformTypes.h>
 #endif // PLATFORM_WINDOWS
@@ -28,9 +22,11 @@ struct FImGuiContextHandle : public Utilities::TRedirectingHandle<ImGuiContext*>
 	FImGuiContextHandle(ImGuiContext*& InDefaultContext)
 		: Utilities::TRedirectingHandle<ImGuiContext*>(InDefaultContext)
 	{
+		UE_LOG(LogTemp, Error, TEXT("Handle Gets Created"));
 		if (FImGuiModule* Module = FModuleManager::GetModulePtr<FImGuiModule>("ImGui"))
 		{
 			SetParent(Module->ImGuiContextHandle);
+			UE_LOG(LogTemp, Error, TEXT("Module Handle is assigned"));
 		}
 	}
 };

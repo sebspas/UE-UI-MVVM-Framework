@@ -6,6 +6,8 @@
 #include "Blueprint/AIBlueprintHelperLibrary.h"
 #include "Runtime/Engine/Classes/Components/DecalComponent.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
+#include "HackNSlashProto/Game/Component/Health.h"
+#include "HackNSlashProto/Game/Component/Mana.h"
 #include "Kismet/KismetMathLibrary.h"
 
 AHackNSlashProtoPlayerController::AHackNSlashProtoPlayerController()
@@ -110,6 +112,32 @@ void AHackNSlashProtoPlayerController::RotateTowardCursor()
 		const FRotator newRotationNoY = FRotator(0.f, rotation.Yaw, 0.f);
 		MyPawn->SetActorRotation(newRotationNoY);
 	}
+}
+
+UVMHealth* AHackNSlashProtoPlayerController::GetHealthVM()
+{
+	if(AHackNSlashProtoCharacter* player = Cast<AHackNSlashProtoCharacter>(GetPawn()))
+	{
+		if(UHealth* ActorHealth = Cast<UHealth>(player->GetComponentByClass(UHealth::StaticClass())))
+		{
+			return ActorHealth->HealthViewModel;
+		}
+	}
+
+	return nullptr;
+}
+
+UVMMana* AHackNSlashProtoPlayerController::GetManaVM()
+{
+	if(AHackNSlashProtoCharacter* player = Cast<AHackNSlashProtoCharacter>(GetPawn()))
+	{
+		if(UMana* ActorMana = Cast<UMana>(player->GetComponentByClass(UMana::StaticClass())))
+		{
+			return ActorMana->ManaViewModel;
+		}
+	}
+
+	return nullptr;
 }
 
 void AHackNSlashProtoPlayerController::OnSetDestinationPressed()

@@ -28,6 +28,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float Cooldown = 0.f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float ManaCost = 0.f;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	float RemainingCooldown = 0.f;
 
@@ -68,6 +71,10 @@ protected:
 
 private:
 	float AnimationLength = 0.f;
+	float ElapsedAnimTime = 0.f;
+
+	float HitTime = 0.f;
+	uint8 HitCount = 0;
 
 	// Reference on the weapon used for this attack
 	AWeapon* Weapon;
